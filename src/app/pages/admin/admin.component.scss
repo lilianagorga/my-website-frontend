@@ -1,3 +1,18 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host {
+  animation: fadeInUp 0.4s ease both;
+}
+
 .admin-page {
   padding: 3rem 0;
   min-height: calc(100vh - 64px);
@@ -12,7 +27,7 @@
 .admin-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   margin-bottom: 2rem;
 }
 
@@ -20,7 +35,7 @@
   display: flex;
   gap: 0.5rem;
   margin-bottom: 2rem;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid var(--color-border);
 }
 
 .tab {
@@ -29,27 +44,29 @@
   border: none;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #888;
+  color: var(--color-text-muted);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -2px;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color var(--transition), border-color var(--transition);
 
   &.active {
-    color: #6c63ff;
-    border-bottom-color: #6c63ff;
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
   }
 
   &:hover {
-    color: #1a1a2e;
+    color: var(--color-text);
   }
 }
 
 .tab-content {
+  animation: fadeInUp 0.3s ease both;
+
   h2 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
   }
 }
 
@@ -62,27 +79,31 @@
 
 .btn-add {
   padding: 0.5rem 1.25rem;
-  background: #6c63ff;
+  background: var(--color-primary);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition), transform var(--transition);
 
   &:hover {
-    background: #5a52d5;
+    background: var(--color-primary-hover);
+    transform: translateY(-1px);
   }
 }
 
 .empty {
-  color: #999;
+  color: var(--color-text-light);
   padding: 2rem 0;
 }
 
 .table-wrapper {
   overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-white);
 }
 
 table {
@@ -92,20 +113,33 @@ table {
   th, td {
     padding: 0.875rem 1rem;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
   }
 
   th {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #888;
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    background: var(--color-bg);
   }
 
   td {
     font-size: 0.925rem;
     color: #333;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr {
+    transition: background var(--transition);
+
+    &:hover {
+      background: var(--color-bg);
+    }
   }
 }
 
@@ -116,8 +150,8 @@ table {
 }
 
 .tech-tag {
-  background: rgba(108, 99, 255, 0.08);
-  color: #6c63ff;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
   padding: 0.15rem 0.6rem;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -132,12 +166,13 @@ table {
 .btn-edit {
   padding: 0.35rem 0.85rem;
   background: #f0edff;
-  color: #6c63ff;
+  color: var(--color-primary);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-size: 0.825rem;
   font-weight: 500;
   cursor: pointer;
+  transition: background var(--transition);
 
   &:hover {
     background: #e0dbff;
@@ -148,12 +183,13 @@ table {
 .btn-delete-sm {
   padding: 0.35rem 0.85rem;
   background: #fbe9e7;
-  color: #e74c3c;
+  color: var(--color-danger);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-size: 0.825rem;
   font-weight: 500;
   cursor: pointer;
+  transition: background var(--transition);
 
   &:hover {
     background: #ffcdd2;
@@ -168,10 +204,15 @@ table {
 }
 
 .message-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 1.25rem;
+  transition: box-shadow var(--transition);
+
+  &:hover {
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .message-header {
@@ -183,13 +224,13 @@ table {
   gap: 0.5rem;
 
   strong {
-    color: #1a1a2e;
+    color: var(--color-text);
     font-size: 0.95rem;
   }
 }
 
 .message-email {
-  color: #888;
+  color: var(--color-text-muted);
   font-size: 0.85rem;
   margin-left: 0.5rem;
 }
@@ -201,12 +242,12 @@ table {
 }
 
 .message-date {
-  color: #aaa;
+  color: var(--color-text-light);
   font-size: 0.8rem;
 }
 
 .message-body {
-  color: #555;
+  color: var(--color-text-secondary);
   font-size: 0.925rem;
   line-height: 1.6;
 }

@@ -11,5 +11,6 @@ export const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent, canActivate: [authGuard] }
+  { path: 'admin', component: AdminComponent, canActivate: [authGuard] },
+  { path: '**', redirectTo: '' }
 ];

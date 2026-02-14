@@ -1,10 +1,26 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .hero {
   min-height: calc(100vh - 64px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #fafafa 0%, #f0edff 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, #f0edff 100%);
 }
 
 .hero-content {
@@ -14,25 +30,28 @@
 
 .hero-greeting {
   font-size: 1.125rem;
-  color: #6c63ff;
+  color: var(--color-primary);
   font-weight: 500;
   margin-bottom: 0.5rem;
+  animation: fadeInUp 0.6s ease both;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #1a1a2e;
+  color: var(--color-text);
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 0.75rem;
+  animation: fadeInUp 0.6s ease 0.1s both;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #555;
+  color: var(--color-text-secondary);
   font-weight: 400;
   margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s ease 0.2s both;
 }
 
 .hero-description {
@@ -40,6 +59,7 @@
   color: #666;
   line-height: 1.7;
   margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 .hero-actions {
@@ -47,43 +67,47 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.4s both;
 }
 
 .btn {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all var(--transition);
   cursor: pointer;
 }
 
 .btn-primary {
-  background: #6c63ff;
+  background: var(--color-primary);
   color: #fff;
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.3);
 
   &:hover {
-    background: #5a52d5;
-    transform: translateY(-1px);
+    background: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
   }
 }
 
 .btn-outline {
-  border: 2px solid #6c63ff;
-  color: #6c63ff;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
   background: transparent;
 
   &:hover {
-    background: rgba(108, 99, 255, 0.06);
-    transform: translateY(-1px);
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
   }
 }
 
 .featured {
   padding: 5rem 0;
-  background: #fff;
+  background: var(--color-bg-white);
+  animation: fadeIn 0.6s ease both;
 }
 
 .section-container {
@@ -95,7 +119,7 @@
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--color-text);
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -107,15 +131,15 @@
 }
 
 .project-card {
-  background: #fafafa;
-  border-radius: 12px;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid #eee;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition);
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -123,6 +147,11 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+
+  .project-card:hover & {
+    transform: scale(1.03);
+  }
 }
 
 .project-body {
@@ -131,7 +160,7 @@
   h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 0.5rem;
   }
 
@@ -151,8 +180,8 @@
 }
 
 .tech-tag {
-  background: rgba(108, 99, 255, 0.08);
-  color: #6c63ff;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -164,10 +193,11 @@
   gap: 1rem;
 
   a {
-    color: #6c63ff;
+    color: var(--color-primary);
     font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
+    transition: color var(--transition);
 
     &:hover {
       text-decoration: underline;
