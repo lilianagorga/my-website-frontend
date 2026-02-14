@@ -1,0 +1,56 @@
+<div class="modal-overlay" (click)="onOverlayClick($event)">
+  <div class="modal">
+    <h2>{{ isEditing ? 'Edit Project' : 'Add Project' }}</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" type="text" formControlName="title" placeholder="Project title" />
+        @if (form.get('title')?.touched && form.get('title')?.hasError('required')) {
+          <span class="error">Title is required.</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" rows="4" placeholder="Project description"></textarea>
+        @if (form.get('description')?.touched && form.get('description')?.hasError('required')) {
+          <span class="error">Description is required.</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="techStack">Tech Stack</label>
+        <input id="techStack" type="text" formControlName="techStack" placeholder="Angular, Spring Boot, PostgreSQL" />
+        <span class="hint">Comma-separated values</span>
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input id="imageUrl" type="text" formControlName="imageUrl" placeholder="https://..." />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="githubUrl">GitHub URL</label>
+          <input id="githubUrl" type="text" formControlName="githubUrl" placeholder="https://github.com/..." />
+        </div>
+        <div class="form-group">
+          <label for="demoUrl">Demo URL</label>
+          <input id="demoUrl" type="text" formControlName="demoUrl" placeholder="https://..." />
+        </div>
+      </div>
+
+      @if (errorMessage) {
+        <div class="alert-error">{{ errorMessage }}</div>
+      }
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+        <button type="submit" class="btn-save" [disabled]="submitting">
+          {{ submitting ? 'Saving...' : (isEditing ? 'Update' : 'Create') }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
