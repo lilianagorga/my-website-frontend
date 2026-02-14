@@ -1,0 +1,16 @@
+name: my-website-prod
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - website-net
+
+networks:
+  website-net:
+    driver: bridge
