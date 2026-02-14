@@ -6,16 +6,18 @@
       <div class="form-group">
         <label for="title">Title</label>
         <input id="title" type="text" formControlName="title" placeholder="Project title" />
-        @if (form.get('title')?.touched && form.get('title')?.hasError('required')) {
-          <span class="error">Title is required.</span>
+        @if (form.get('title')?.touched && form.get('title')?.invalid) {
+          @if (form.get('title')?.hasError('required')) { <span class="error">Title is required.</span> }
+          @if (form.get('title')?.hasError('maxlength')) { <span class="error">Max 100 characters.</span> }
         }
       </div>
 
       <div class="form-group">
         <label for="description">Description</label>
         <textarea id="description" formControlName="description" rows="4" placeholder="Project description"></textarea>
-        @if (form.get('description')?.touched && form.get('description')?.hasError('required')) {
-          <span class="error">Description is required.</span>
+        @if (form.get('description')?.touched && form.get('description')?.invalid) {
+          @if (form.get('description')?.hasError('required')) { <span class="error">Description is required.</span> }
+          @if (form.get('description')?.hasError('maxlength')) { <span class="error">Max 500 characters.</span> }
         }
       </div>
 
@@ -28,16 +30,25 @@
       <div class="form-group">
         <label for="imageUrl">Image URL</label>
         <input id="imageUrl" type="text" formControlName="imageUrl" placeholder="https://..." />
+        @if (form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid) {
+          <span class="error">Valid URL starting with http/https is required.</span>
+        }
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label for="githubUrl">GitHub URL</label>
           <input id="githubUrl" type="text" formControlName="githubUrl" placeholder="https://github.com/..." />
+          @if (form.get('githubUrl')?.touched && form.get('githubUrl')?.invalid) {
+            <span class="error">Valid GitHub URL required.</span>
+          }
         </div>
         <div class="form-group">
           <label for="demoUrl">Demo URL</label>
           <input id="demoUrl" type="text" formControlName="demoUrl" placeholder="https://..." />
+          @if (form.get('demoUrl')?.touched && form.get('demoUrl')?.invalid) {
+            <span class="error">Valid Demo URL required.</span>
+          }
         </div>
       </div>
 
@@ -47,7 +58,7 @@
 
       <div class="form-actions">
         <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
-        <button type="submit" class="btn-save" [disabled]="submitting">
+        <button type="submit" class="btn-save" [disabled]="submitting || form.invalid">
           {{ submitting ? 'Saving...' : (isEditing ? 'Update' : 'Create') }}
         </button>
       </div>

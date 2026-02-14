@@ -22,13 +22,30 @@ export class ProjectFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private projectService: ProjectService) {}
 
   ngOnInit(): void {
+    const urlPattern = /^https?:\/\/.*/;
+
     this.form = this.fb.group({
-      title: [this.project?.title ?? '', Validators.required],
-      description: [this.project?.description ?? '', Validators.required],
+      title: [this.project?.title ?? '', [
+        Validators.required,
+        Validators.maxLength(100)
+      ]],
+      description: [this.project?.description ?? '', [
+        Validators.required,
+        Validators.maxLength(500)
+      ]],
       techStack: [this.project?.techStack?.join(', ') ?? ''],
-      imageUrl: [this.project?.imageUrl ?? ''],
-      githubUrl: [this.project?.githubUrl ?? ''],
-      demoUrl: [this.project?.demoUrl ?? '']
+      imageUrl: [this.project?.imageUrl ?? '', [
+        Validators.required,
+        Validators.pattern(urlPattern)
+      ]],
+      githubUrl: [this.project?.githubUrl ?? '', [
+        Validators.required,
+        Validators.pattern(urlPattern)
+      ]],
+      demoUrl: [this.project?.demoUrl ?? '', [
+        Validators.required,
+        Validators.pattern(urlPattern)
+      ]]
     });
   }
 
@@ -60,7 +77,7 @@ export class ProjectFormComponent implements OnInit {
     request.subscribe({
       next: () => this.saved.emit(),
       error: () => {
-        this.errorMessage = 'Failed to save project. Please try again.';
+        this.errorMessage = 'Impossibile salvare il progetto. Verifica i dati (gli URL devono iniziare con http:// o https://).';
         this.submitting = false;
       }
     });

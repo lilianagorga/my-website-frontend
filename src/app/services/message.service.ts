@@ -15,7 +15,7 @@ export class MessageService {
     return this.http.get<Message[]>(this.apiUrl);
   }
 
-  getById(id: number): Observable<Message> {
+  getById(id: string): Observable<Message> {
     return this.http.get<Message>(`${this.apiUrl}/${id}`);
   }
 
@@ -23,7 +23,7 @@ export class MessageService {
     return this.http.post<Message>(this.apiUrl, message);
   }
 
-  delete(id: number): Observable<void> {
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
