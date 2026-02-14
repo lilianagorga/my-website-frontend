@@ -1,0 +1,52 @@
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">Hi, I'm</p>
+    <h1 class="hero-title">Liliana Gorga</h1>
+    <p class="hero-subtitle">Full-Stack Developer</p>
+    <p class="hero-description">
+      I build modern web applications with clean code and thoughtful design.
+      Passionate about creating seamless user experiences and scalable solutions.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/projects" class="btn btn-primary">View Projects</a>
+      <a routerLink="/contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+@if (featuredProjects.length > 0) {
+  <section class="featured">
+    <div class="section-container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        @for (project of featuredProjects; track project.id) {
+          <div class="project-card">
+            @if (project.imageUrl) {
+              <img [src]="project.imageUrl" [alt]="project.title" class="project-image" />
+            }
+            <div class="project-body">
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+              <div class="tech-stack">
+                @for (tech of project.techStack; track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+              <div class="project-links">
+                @if (project.githubUrl) {
+                  <a [href]="project.githubUrl" target="_blank" rel="noopener">GitHub</a>
+                }
+                @if (project.demoUrl) {
+                  <a [href]="project.demoUrl" target="_blank" rel="noopener">Live Demo</a>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="section-footer">
+        <a routerLink="/projects" class="btn btn-outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+}
