@@ -1,0 +1,72 @@
+<section class="register-page">
+  <div class="register-card">
+    <h1>Registrati</h1>
+    <p class="register-subtitle">Crea un account per accedere alla dashboard admin.</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" formControlName="username" placeholder="Il tuo username" />
+        @if (registerForm.get('username')?.touched && registerForm.get('username')?.hasError('required')) {
+          <span class="error">Lo username è obbligatorio.</span>
+        }
+        @if (registerForm.get('username')?.touched && registerForm.get('username')?.hasError('minlength')) {
+          <span class="error">Minimo 3 caratteri.</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="la-tua@email.com" />
+        @if (registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')) {
+          <span class="error">L'email è obbligatoria.</span>
+        }
+        @if (registerForm.get('email')?.touched && registerForm.get('email')?.hasError('email')) {
+          <span class="error">Inserisci un'email valida.</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Minimo 8 caratteri" />
+        @if (registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')) {
+          <span class="error">La password è obbligatoria.</span>
+        }
+        @if (registerForm.get('password')?.touched && registerForm.get('password')?.hasError('minlength')) {
+          <span class="error">La password deve avere almeno 8 caratteri.</span>
+        }
+        @if (registerForm.get('password')?.touched && registerForm.get('password')?.hasError('maxlength')) {
+          <span class="error">La password deve avere massimo 20 caratteri.</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Conferma Password</label>
+        <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Ripeti la password" />
+        @if (registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.hasError('required')) {
+          <span class="error">La conferma password è obbligatoria.</span>
+        }
+        @if (registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched) {
+          <span class="error">Le password non coincidono.</span>
+        }
+      </div>
+
+      @if (successMessage) {
+        <div class="alert alert-success">{{ successMessage }}</div>
+      }
+
+      @if (errorMessage) {
+        <div class="alert alert-error">{{ errorMessage }}</div>
+      }
+
+      <button type="submit" class="btn-submit" [disabled]="submitting">
+        {{ submitting ? 'Registrazione in corso...' : 'Registrati' }}
+      </button>
+    </form>
+
+    <p class="register-footer">
+      Hai già un account?
+      <a routerLink="/login">Accedi</a>
+    </p>
+  </div>
+</section>

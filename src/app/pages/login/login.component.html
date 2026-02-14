@@ -23,6 +23,10 @@
         }
       </div>
 
+      @if (successMessage) {
+        <div class="alert alert-success">{{ successMessage }}</div>
+      }
+
       @if (errorMessage) {
         <div class="alert alert-error">{{ errorMessage }}</div>
       }
@@ -31,5 +35,10 @@
         {{ submitting ? 'Accesso in corso...' : 'Accedi' }}
       </button>
     </form>
+
+    <p class="login-footer">
+      Non hai un account?
+      <a routerLink="/register">Registrati</a>
+    </p>
   </div>
 </section>

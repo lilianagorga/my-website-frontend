@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { LoginRequest } from '../models/login-request.model';
 import { AuthResponse } from '../models/auth-response.model';
+import { RegisterRequest } from '../models/register-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,18 @@ export class AuthService {
   login(email: string, password: string): Observable<AuthResponse> {
     const body: LoginRequest = { email, password };
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, body).pipe(
-      tap(response => localStorage.setItem(this.tokenKey, response.token))
+      tap(response => {
+        if (response.token) {
+          localStorage.setItem(this.tokenKey, response.token);
+          return;
+        }
+        localStorage.removeItem(this.tokenKey);
+      })
     );
+  }
+
+  register(payload: RegisterRequest): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/register`, payload);
   }
 
   logout(): void {

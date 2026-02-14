@@ -1,29 +1,41 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   loginForm: FormGroup;
   submitting = false;
+  successMessage = '';
   errorMessage = '';
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+
+    const registered = this.route.snapshot.queryParamMap.get('registered');
+    const email = this.route.snapshot.queryParamMap.get('email');
+
+    if (registered === '1') {
+      this.successMessage = 'Registrazione completata. Effettua il login.';
+    }
+    if (email) {
+      this.loginForm.patchValue({ email });
+    }
   }
 
   onSubmit(): void {
