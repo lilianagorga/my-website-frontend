@@ -68,13 +68,13 @@ export class AdminComponent implements OnInit {
   }
 
   deleteProject(project: Project): void {
-    if (confirm(`Delete project "${project.title}"?`)) {
+    if (confirm(`Eliminare il progetto "${project.title}"?`)) {
       this.projectService.delete(project.id!).subscribe(() => this.loadProjects());
     }
   }
 
   deleteMessage(message: Message): void {
-    if (confirm('Delete this message?')) {
+    if (confirm('Eliminare questo messaggio?')) {
       this.messageService.delete(message.id!).subscribe(() => this.loadMessages());
     }
   }

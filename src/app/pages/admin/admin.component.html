@@ -1,39 +1,39 @@
 <section class="admin-page">
   <div class="admin-container">
-    <h1 class="admin-title">Admin Dashboard</h1>
+    <h1 class="admin-title">Dashboard Admin</h1>
 
     <div class="tabs">
       <button
         class="tab"
         [class.active]="activeTab === 'projects'"
         (click)="switchTab('projects')">
-        Projects
+        Progetti
       </button>
       <button
         class="tab"
         [class.active]="activeTab === 'messages'"
         (click)="switchTab('messages')">
-        Messages
+        Messaggi
       </button>
     </div>
 
     @if (activeTab === 'projects') {
       <div class="tab-content">
         <div class="tab-header">
-          <h2>Projects ({{ projects.length }})</h2>
-          <button class="btn-add" (click)="openAddProject()">+ Add Project</button>
+          <h2>Progetti ({{ projects.length }})</h2>
+          <button class="btn-add" (click)="openAddProject()">+ Aggiungi Progetto</button>
         </div>
 
         @if (projects.length === 0) {
-          <p class="empty">No projects yet.</p>
+          <p class="empty">Nessun progetto presente.</p>
         } @else {
           <div class="table-wrapper">
             <table>
               <thead>
                 <tr>
-                  <th>Title</th>
+                  <th>Titolo</th>
                   <th>Tech Stack</th>
-                  <th>Actions</th>
+                  <th>Azioni</th>
                 </tr>
               </thead>
               <tbody>
@@ -49,8 +49,8 @@
                     </td>
                     <td>
                       <div class="actions">
-                        <button class="btn-edit" (click)="openEditProject(project)">Edit</button>
-                        <button class="btn-delete" (click)="deleteProject(project)">Delete</button>
+                        <button class="btn-edit" (click)="openEditProject(project)">Modifica</button>
+                        <button class="btn-delete" (click)="deleteProject(project)">Elimina</button>
                       </div>
                     </td>
                   </tr>
@@ -64,10 +64,10 @@
 
     @if (activeTab === 'messages') {
       <div class="tab-content">
-        <h2>Messages ({{ messages.length }})</h2>
+        <h2>Messaggi ({{ messages.length }})</h2>
 
         @if (messages.length === 0) {
-          <p class="empty">No messages yet.</p>
+          <p class="empty">Nessun messaggio ricevuto.</p>
         } @else {
           <div class="messages-list">
             @for (msg of messages; track msg.id) {
@@ -81,7 +81,7 @@
                     @if (msg.createdAt) {
                       <span class="message-date">{{ msg.createdAt }}</span>
                     }
-                    <button class="btn-delete-sm" (click)="deleteMessage(msg)">Delete</button>
+                    <button class="btn-delete-sm" (click)="deleteMessage(msg)">Elimina</button>
                   </div>
                 </div>
                 <p class="message-body">{{ msg.message }}</p>

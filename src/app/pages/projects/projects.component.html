@@ -1,13 +1,13 @@
 <section class="projects-page">
   <div class="page-container">
-    <h1 class="page-title">Projects</h1>
-    <p class="page-subtitle">A collection of my recent work and side projects.</p>
+    <h1 class="page-title">Progetti</h1>
+    <p class="page-subtitle">Una raccolta dei miei lavori recenti e progetti personali.</p>
 
     @if (loading) {
-      <div class="loading">Loading projects...</div>
+      <div class="loading">Caricamento progetti...</div>
     } @else if (projects.length === 0) {
       <div class="empty-state">
-        <p>No projects available at the moment.</p>
+        <p>Nessun progetto disponibile al momento.</p>
       </div>
     } @else {
       <div class="projects-grid">
@@ -40,7 +40,7 @@
                     <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor">
                       <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/>
                     </svg>
-                    Live Demo
+                    Demo
                   </a>
                 }
               </div>

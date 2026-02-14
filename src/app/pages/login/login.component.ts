@@ -41,7 +41,7 @@ export class LoginComponent {
         this.router.navigate(['/admin']);
       },
       error: () => {
-        this.errorMessage = 'Invalid email or password.';
+        this.errorMessage = 'Email o password non validi.';
         this.submitting = false;
       }
     });

@@ -1,4 +1,3 @@
-
 <nav class="navbar">
   <div class="navbar-container">
     <a class="navbar-brand" routerLink="/">Liliana Gorga</a>
@@ -11,11 +10,11 @@
 
     <ul class="nav-links" [class.open]="menuOpen">
       <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="menuOpen = false">Home</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen = false">Projects</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen = false">Contact</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen = false">Progetti</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen = false">Contatti</a></li>
       @if (authService.isLoggedIn()) {
         <li><a routerLink="/admin" routerLinkActive="active" (click)="menuOpen = false">Admin</a></li>
-        <li><a class="btn-logout" (click)="logout()">Logout</a></li>
+        <li><a class="btn-logout" (click)="logout()">Esci</a></li>
       }
     </ul>
   </div>

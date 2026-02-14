@@ -1,15 +1,15 @@
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-greeting">Hi, I'm</p>
+    <p class="hero-greeting">Ciao, sono</p>
     <h1 class="hero-title">Liliana Gorga</h1>
-    <p class="hero-subtitle">Full-Stack Developer</p>
+    <p class="hero-subtitle">Sviluppatrice Full-Stack</p>
     <p class="hero-description">
-      I build modern web applications with clean code and thoughtful design.
-      Passionate about creating seamless user experiences and scalable solutions.
+      Costruisco applicazioni web moderne con codice pulito e design curato.
+      Appassionata di esperienze utente intuitive e soluzioni scalabili.
     </p>
     <div class="hero-actions">
-      <a routerLink="/projects" class="btn btn-primary">View Projects</a>
-      <a routerLink="/contact" class="btn btn-outline">Get in Touch</a>
+      <a routerLink="/projects" class="btn btn-primary">Vedi i Progetti</a>
+      <a routerLink="/contact" class="btn btn-outline">Contattami</a>
     </div>
   </div>
 </section>
@@ -17,7 +17,7 @@
 @if (featuredProjects.length > 0) {
   <section class="featured">
     <div class="section-container">
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">Progetti in Evidenza</h2>
       <div class="projects-grid">
         @for (project of featuredProjects; track project.id) {
           <div class="project-card">
@@ -37,7 +37,7 @@
                   <a [href]="project.githubUrl" target="_blank" rel="noopener">GitHub</a>
                 }
                 @if (project.demoUrl) {
-                  <a [href]="project.demoUrl" target="_blank" rel="noopener">Live Demo</a>
+                  <a [href]="project.demoUrl" target="_blank" rel="noopener">Demo</a>
                 }
               </div>
             </div>
@@ -45,7 +45,7 @@
         }
       </div>
       <div class="section-footer">
-        <a routerLink="/projects" class="btn btn-outline">View All Projects</a>
+        <a routerLink="/projects" class="btn btn-outline">Vedi Tutti i Progetti</a>
       </div>
     </div>
   </section>

@@ -1,25 +1,25 @@
 <section class="login-page">
   <div class="login-card">
-    <h1>Login</h1>
-    <p class="login-subtitle">Sign in to access the admin dashboard.</p>
+    <h1>Accedi</h1>
+    <p class="login-subtitle">Effettua l'accesso per gestire la dashboard admin.</p>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email" placeholder="your@email.com" />
+        <input id="email" type="email" formControlName="email" placeholder="la-tua@email.com" />
         @if (loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')) {
-          <span class="error">Email is required.</span>
+          <span class="error">L'email è obbligatoria.</span>
         }
         @if (loginForm.get('email')?.touched && loginForm.get('email')?.hasError('email')) {
-          <span class="error">Please enter a valid email.</span>
+          <span class="error">Inserisci un'email valida.</span>
         }
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input id="password" type="password" formControlName="password" placeholder="Your password" />
+        <input id="password" type="password" formControlName="password" placeholder="La tua password" />
         @if (loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')) {
-          <span class="error">Password is required.</span>
+          <span class="error">La password è obbligatoria.</span>
         }
       </div>
 
@@ -28,7 +28,7 @@
       }
 
       <button type="submit" class="btn-submit" [disabled]="submitting">
-        {{ submitting ? 'Signing in...' : 'Sign In' }}
+        {{ submitting ? 'Accesso in corso...' : 'Accedi' }}
       </button>
     </form>
   </div>

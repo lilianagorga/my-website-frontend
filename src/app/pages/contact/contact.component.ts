@@ -35,12 +35,12 @@ export class ContactComponent {
 
     this.messageService.create(this.contactForm.value).subscribe({
       next: () => {
-        this.successMessage = 'Message sent successfully! I\'ll get back to you soon.';
+        this.successMessage = 'Messaggio inviato con successo! Ti risponderò al più presto.';
         this.contactForm.reset();
         this.submitting = false;
       },
       error: () => {
-        this.errorMessage = 'Something went wrong. Please try again later.';
+        this.errorMessage = 'Qualcosa è andato storto. Riprova più tardi.';
         this.submitting = false;
       }
     });
