@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Realty Mate</title>
+  <desc id="desc">Illustrazione app immobiliare con mappa e case</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f3f3"/>
+      <stop offset="100%" stop-color="#dcdcdc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="230" y="170" width="740" height="430" rx="28" fill="#ffffff" stroke="#c7c7c7" stroke-width="7"/>
+  <path d="M270 530l150-210 110 95 180-225 220 340H270z" fill="#e5e5e5"/>
+  <path d="M275 520l210-220 95 90 160-160 165 290H275z" fill="#d5d5d5"/>
+  <path d="M445 390l105-90 105 90v118H445V390z" fill="#5f5f5f"/>
+  <rect x="486" y="445" width="38" height="63" rx="6" fill="#ececec"/>
+  <rect x="580" y="428" width="45" height="30" rx="5" fill="#ececec"/>
+  <path d="M815 270c0 64-92 160-92 160s-92-96-92-160a92 92 0 1 1 184 0z" fill="#5a5a5a"/>
+  <circle cx="723" cy="270" r="38" fill="#f0f0f0"/>
+  <rect x="300" y="220" width="180" height="18" rx="9" fill="#b8b8b8"/>
+  <rect x="300" y="252" width="130" height="14" rx="7" fill="#c5c5c5"/>
+  <text x="600" y="655" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4d4d4d">REALTY MATE</text>
+</svg>

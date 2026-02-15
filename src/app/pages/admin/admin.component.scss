@@ -165,7 +165,7 @@ table {
 
 .btn-edit {
   padding: 0.35rem 0.85rem;
-  background: #f0edff;
+  background: var(--color-surface-tint);
   color: var(--color-primary);
   border: none;
   border-radius: var(--radius-sm);

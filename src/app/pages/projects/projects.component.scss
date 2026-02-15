@@ -97,7 +97,7 @@
 .project-image-placeholder {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, #f0edff 0%, #e8e4ff 100%);
+  background: linear-gradient(135deg, var(--color-surface-tint) 0%, var(--color-surface-tint-strong) 100%);
 }
 
 .project-body {
@@ -139,7 +139,7 @@
   transition: background var(--transition);
 
   &:hover {
-    background: rgba(108, 99, 255, 0.15);
+    background: var(--color-primary-light-strong);
   }
 }
 

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Wear Again</title>
+  <desc id="desc">Illustrazione e-commerce second hand</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f4f4"/>
+      <stop offset="100%" stop-color="#dedede"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="190" cy="120" r="110" fill="#ffffff" opacity="0.6"/>
+  <circle cx="1020" cy="620" r="150" fill="#ffffff" opacity="0.45"/>
+  <rect x="350" y="150" width="500" height="380" rx="32" fill="#ffffff" stroke="#cfcfcf" stroke-width="6"/>
+  <rect x="430" y="225" width="340" height="230" rx="18" fill="#ececec" stroke="#bdbdbd" stroke-width="5"/>
+  <path d="M545 245c-18 0-32 14-32 32v18h18v-16c0-9 7-16 16-16h10v-18h-12z" fill="#585858"/>
+  <path d="M655 245c18 0 32 14 32 32v18h-18v-16c0-9-7-16-16-16h-10v-18h12z" fill="#585858"/>
+  <path d="M512 287h176l-26 150H538l-26-150z" fill="#7c7c7c"/>
+  <path d="M517 322h166l-8 46H525l-8-46z" fill="#5b5b5b" opacity="0.8"/>
+  <path d="M280 380a110 110 0 0 1 120-95" fill="none" stroke="#646464" stroke-width="20" stroke-linecap="round"/>
+  <polygon points="390,252 435,315 360,322" fill="#646464"/>
+  <path d="M920 420a110 110 0 0 1-120 95" fill="none" stroke="#646464" stroke-width="20" stroke-linecap="round"/>
+  <polygon points="810,548 765,485 840,478" fill="#646464"/>
+  <text x="600" y="615" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4d4d4d">WEAR AGAIN</text>
+</svg>

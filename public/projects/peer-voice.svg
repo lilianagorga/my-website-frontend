@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Peer Voice</title>
+  <desc id="desc">Illustrazione piattaforma community e ascolto</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f3f3"/>
+      <stop offset="100%" stop-color="#dddddd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="180" cy="600" r="150" fill="#ffffff" opacity="0.55"/>
+  <circle cx="1010" cy="140" r="125" fill="#ffffff" opacity="0.5"/>
+  <rect x="285" y="190" width="380" height="220" rx="28" fill="#ffffff" stroke="#c6c6c6" stroke-width="6"/>
+  <polygon points="430,410 510,410 460,475" fill="#ffffff" stroke="#c6c6c6" stroke-width="6"/>
+  <rect x="535" y="275" width="380" height="220" rx="28" fill="#efefef" stroke="#bababa" stroke-width="6"/>
+  <polygon points="690,495 770,495 730,548" fill="#efefef" stroke="#bababa" stroke-width="6"/>
+  <circle cx="600" cy="355" r="62" fill="#5e5e5e"/>
+  <rect x="570" y="405" width="60" height="95" rx="28" fill="#5e5e5e"/>
+  <rect x="540" y="500" width="120" height="26" rx="12" fill="#5e5e5e"/>
+  <path d="M483 324c-35 35-35 91 0 126" fill="none" stroke="#737373" stroke-width="16" stroke-linecap="round"/>
+  <path d="M717 324c35 35 35 91 0 126" fill="none" stroke="#737373" stroke-width="16" stroke-linecap="round"/>
+  <path d="M445 288c-55 56-55 148 0 204" fill="none" stroke="#9a9a9a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M755 288c55 56 55 148 0 204" fill="none" stroke="#9a9a9a" stroke-width="12" stroke-linecap="round"/>
+  <text x="600" y="628" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4f4f4f">PEER VOICE</text>
+</svg>

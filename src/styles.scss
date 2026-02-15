@@ -1,7 +1,13 @@
 :root {
-  --color-primary: #6c63ff;
-  --color-primary-hover: #5a52d5;
-  --color-primary-light: rgba(108, 99, 255, 0.08);
+  --color-primary: #555;
+  --color-primary-hover: #3f3f3f;
+  --color-primary-light: rgba(85, 85, 85, 0.12);
+  --color-primary-light-strong: rgba(85, 85, 85, 0.2);
+  --color-primary-shadow: rgba(85, 85, 85, 0.25);
+  --color-primary-shadow-strong: rgba(85, 85, 85, 0.34);
+  --color-focus-ring: rgba(85, 85, 85, 0.16);
+  --color-surface-tint: #efefef;
+  --color-surface-tint-strong: #dddddd;
   --color-text: #1a1a2e;
   --color-text-secondary: #555;
   --color-text-muted: #888;

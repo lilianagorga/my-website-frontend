@@ -12,7 +12,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description:
       'Piattaforma e-commerce second hand orientata alla moda sostenibile, con catalogo prodotti e gestione acquisti.',
     techStack: ['Java', 'Spring Boot', 'Thymeleaf', 'MongoDB'],
-    imageUrl: '',
+    imageUrl: '/projects/wear-again.svg',
     githubUrl: 'https://github.com/lilianagorga/wear-again',
     demoUrl: 'https://wear-again.lilianagorga.org'
   },
@@ -22,7 +22,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description:
       "Piattaforma dedicata all'ascolto e al confronto su temi di gender equality, con flussi orientati alla community.",
     techStack: ['Next.js', 'TypeScript', 'Appwrite', 'Tailwind CSS'],
-    imageUrl: '',
+    imageUrl: '/projects/peer-voice.svg',
     githubUrl: 'https://github.com/lilianagorga/peer-voice',
     demoUrl: 'https://peer-voice.lilianagorga.com'
   },
@@ -32,7 +32,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description:
       "Dashboard gestionale per agenzia immobiliare con controllo ruoli/permessi e gestione operativa dell'area admin.",
     techStack: ['Laravel', 'MySQL', 'Spatie Laravel-Permission'],
-    imageUrl: '',
+    imageUrl: '/projects/realty-mate-dashboard.svg',
     githubUrl: 'https://github.com/lilianagorga/realty-mate-backend',
     demoUrl: 'https://realty-mate-backend.lilianagorga.com'
   },
@@ -42,7 +42,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description:
       'Applicazione immobiliare lato utente con ricerca immobili, mappe interattive e navigazione delle schede proprietà.',
     techStack: ['React', 'Chakra UI', 'Swiper', 'Axios', 'Google Maps API'],
-    imageUrl: '',
+    imageUrl: '/projects/realty-mate.svg',
     githubUrl: 'https://github.com/lilianagorga/realty-mate',
     demoUrl: 'https://realty-mate.lilianagorga.com'
   },
@@ -52,7 +52,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description:
       "Progetto full-stack per scuola online, pensato per offrire percorsi formativi digitali in un ambiente d'apprendimento moderno.",
     techStack: ['Laravel', 'Vite', 'Tailwind CSS', 'Alpine.js'],
-    imageUrl: '',
+    imageUrl: '/projects/eteach-hub.svg',
     githubUrl: 'https://github.com/lilianagorga/e-teach-hub',
     demoUrl: 'https://eteachhub.lilianagorga.com'
   },
@@ -62,7 +62,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description:
       'Blog tecnico full-stack per pubblicazione contenuti, categorie e interazioni utenti, con pannello di gestione ruoli e permessi.',
     techStack: ['Docker', 'Laravel', 'React', 'Spatie', 'Vite'],
-    imageUrl: '',
+    imageUrl: '/projects/tech-blog.svg',
     githubUrl: 'https://github.com/lilianagorga/tech-blog',
     demoUrl: 'http://techblogproduction.lilianagorga.com'
   }

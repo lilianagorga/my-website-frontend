@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">eTeach Hub</title>
+  <desc id="desc">Illustrazione piattaforma e-learning</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f4f4"/>
+      <stop offset="100%" stop-color="#dfdfdf"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="250" y="145" width="700" height="390" rx="24" fill="#ffffff" stroke="#c9c9c9" stroke-width="7"/>
+  <rect x="300" y="195" width="600" height="290" rx="14" fill="#ececec"/>
+  <rect x="500" y="540" width="200" height="20" rx="10" fill="#666"/>
+  <rect x="450" y="560" width="300" height="24" rx="12" fill="#7a7a7a"/>
+  <polygon points="600,228 760,290 600,352 440,290" fill="#5f5f5f"/>
+  <polygon points="600,269 700,308 600,347 500,308" fill="#ececec"/>
+  <rect x="750" y="295" width="14" height="80" fill="#5f5f5f"/>
+  <circle cx="757" cy="386" r="16" fill="#5f5f5f"/>
+  <rect x="360" y="392" width="160" height="16" rx="8" fill="#bababa"/>
+  <rect x="360" y="424" width="130" height="14" rx="7" fill="#c6c6c6"/>
+  <rect x="670" y="392" width="160" height="16" rx="8" fill="#bababa"/>
+  <rect x="670" y="424" width="120" height="14" rx="7" fill="#c6c6c6"/>
+  <text x="600" y="654" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="700" fill="#4f4f4f">eTEACH HUB</text>
+</svg>
