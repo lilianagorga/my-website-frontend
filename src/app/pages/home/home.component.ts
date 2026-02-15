@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project.model';
+import { PORTFOLIO_PROJECTS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +13,9 @@ import { Project } from '../../models/project.model';
 export class HomeComponent implements OnInit {
   featuredProjects: Project[] = [];
 
-  constructor(private projectService: ProjectService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.projectService.getAll().subscribe({
-      next: (projects) => this.featuredProjects = projects.slice(0, 3),
-      error: () => this.featuredProjects = []
-    });
+    this.featuredProjects = PORTFOLIO_PROJECTS.slice(0, 3);
   }
 }
