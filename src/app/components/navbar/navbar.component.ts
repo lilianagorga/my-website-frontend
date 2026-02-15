@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,7 +12,10 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent {
   menuOpen = false;
 
-  constructor(public authService: AuthService) {}
+  constructor(
+    public authService: AuthService,
+    private router: Router
+  ) {}
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
@@ -21,5 +24,6 @@ export class NavbarComponent {
   logout(): void {
     this.authService.logout();
     this.menuOpen = false;
+    this.router.navigateByUrl('/');
   }
 }
