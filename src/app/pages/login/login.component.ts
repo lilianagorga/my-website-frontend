@@ -50,7 +50,7 @@ export class LoginComponent {
 
     this.authService.login(email, password).subscribe({
       next: () => {
-        this.router.navigate(['/admin']);
+        this.router.navigate([this.authService.isAdmin() ? '/admin' : '/']);
       },
       error: () => {
         this.errorMessage = 'Email o password non validi.';

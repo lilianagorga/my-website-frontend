@@ -17,7 +17,9 @@
         <li><a routerLink="/register" routerLinkActive="active" (click)="menuOpen = false">Registrati</a></li>
       }
       @if (authService.isLoggedIn()) {
-        <li><a routerLink="/admin" routerLinkActive="active" (click)="menuOpen = false">Admin</a></li>
+        @if (authService.isAdmin()) {
+          <li><a routerLink="/admin" routerLinkActive="active" (click)="menuOpen = false">Admin</a></li>
+        }
         <li><a class="btn-logout" (click)="logout()">Esci</a></li>
       }
     </ul>

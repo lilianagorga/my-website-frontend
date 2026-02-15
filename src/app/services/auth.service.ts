@@ -42,4 +42,50 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
   }
+
+  isAdmin(): boolean {
+    return this.getUserRoles().includes('ADMIN');
+  }
+
+  private getUserRoles(): string[] {
+    const payload = this.getTokenPayload();
+    if (!payload) {
+      return [];
+    }
+
+    const authoritiesClaim = payload['authorities'];
+    const rolesClaim = payload['roles'];
+
+    const roles = Array.isArray(authoritiesClaim)
+      ? authoritiesClaim
+      : Array.isArray(rolesClaim)
+        ? rolesClaim
+        : [];
+
+    return roles
+      .filter((role): role is string => typeof role === 'string')
+      .map(role => role.replace(/^ROLE_/, '').toUpperCase());
+  }
+
+  private getTokenPayload(): Record<string, unknown> | null {
+    const token = this.getToken();
+    if (!token) {
+      return null;
+    }
+
+    const tokenParts = token.split('.');
+    if (tokenParts.length !== 3) {
+      return null;
+    }
+
+    try {
+      const normalizedPayload = tokenParts[1]
+        .replace(/-/g, '+')
+        .replace(/_/g, '/');
+      const paddedPayload = normalizedPayload + '='.repeat((4 - normalizedPayload.length % 4) % 4);
+      return JSON.parse(atob(paddedPayload));
+    } catch {
+      return null;
+    }
+  }
 }
