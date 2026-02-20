@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/project.model';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PORTFOLIO_PROJECTS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-projects',
-  standalone: true,
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProjectsComponent implements OnInit {
-  projects: Project[] = [];
-  loading = false;
+export class ProjectsComponent {
+  projects = PORTFOLIO_PROJECTS;
 
-  constructor() {}
-
-  ngOnInit(): void {
-    this.projects = PORTFOLIO_PROJECTS;
+  getSafeImageUrl(url: string | undefined | null): string {
+    if (url && (url.startsWith('/') || url.startsWith('https://'))) {
+      return url;
+    }
+    return '/projects/placeholder.svg';
   }
 }

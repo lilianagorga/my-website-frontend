@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SOCIAL_LINKS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-footer',
-  standalone: true,
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();

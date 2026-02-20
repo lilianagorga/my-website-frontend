@@ -1,3 +1,19 @@
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:focus {
+    top: 0;
+  }
+}
+
 :host {
   display: flex;
   flex-direction: column;

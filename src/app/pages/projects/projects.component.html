@@ -3,9 +3,7 @@
     <h1 class="page-title">Progetti</h1>
     <p class="page-subtitle">Una raccolta dei miei lavori recenti e progetti personali.</p>
 
-    @if (loading) {
-      <div class="loading">Caricamento progetti...</div>
-    } @else if (projects.length === 0) {
+    @if (projects.length === 0) {
       <div class="empty-state">
         <p>Nessun progetto disponibile al momento.</p>
       </div>
@@ -13,16 +11,12 @@
       <div class="projects-grid">
         @for (project of projects; track project.id) {
           <div class="project-card">
-            @if (project.imageUrl) {
-              <img [src]="project.imageUrl" [alt]="project.title" class="project-image" />
-            } @else {
-              <div class="project-image-placeholder"></div>
-            }
+            <img [src]="getSafeImageUrl(project.imageUrl)" [alt]="project.title" class="project-image" width="400" height="300" loading="lazy" />
             <div class="project-body">
               <h3>{{ project.title }}</h3>
               <p class="project-description">{{ project.description }}</p>
               <div class="tech-stack">
-                @for (tech of project.techStack; track tech) {
+                @for (tech of project.techStack; track $index) {
                   <span class="tech-tag">{{ tech }}</span>
                 }
               </div>

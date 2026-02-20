@@ -1,27 +1,35 @@
-import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ReactiveFormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from '../../services/message.service';
+import { UI_MESSAGES } from '../../constants/messages';
+
+interface ContactForm {
+  name: FormControl<string>;
+  email: FormControl<string>;
+  message: FormControl<string>;
+}
 
 @Component({
   selector: 'app-contact',
-  standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
-  contactForm: FormGroup;
-  submitting = false;
-  successMessage = '';
-  errorMessage = '';
+  private readonly fb = inject(FormBuilder);
+  private readonly messageService = inject(MessageService);
+  private readonly destroyRef = inject(DestroyRef);
 
-  constructor(private fb: FormBuilder, private messageService: MessageService) {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
-    });
-  }
+  contactForm: FormGroup<ContactForm> = this.fb.nonNullable.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required]
+  });
+  submitting = signal(false);
+  successMessage = signal('');
+  errorMessage = signal('');
 
   onSubmit(): void {
     if (this.contactForm.invalid) {
@@ -29,19 +37,19 @@ export class ContactComponent {
       return;
     }
 
-    this.submitting = true;
-    this.successMessage = '';
-    this.errorMessage = '';
+    this.submitting.set(true);
+    this.successMessage.set('');
+    this.errorMessage.set('');
 
-    this.messageService.create(this.contactForm.value).subscribe({
+    this.messageService.create(this.contactForm.getRawValue()).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: () => {
-        this.successMessage = 'Messaggio inviato con successo! Ti risponderò al più presto.';
+        this.successMessage.set(UI_MESSAGES.CONTACT_SUCCESS);
         this.contactForm.reset();
-        this.submitting = false;
+        this.submitting.set(false);
       },
       error: () => {
-        this.errorMessage = 'Qualcosa è andato storto. Riprova più tardi.';
-        this.submitting = false;
+        this.errorMessage.set(UI_MESSAGES.CONTACT_ERROR);
+        this.submitting.set(false);
       }
     });
   }

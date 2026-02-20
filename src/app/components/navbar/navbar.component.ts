@@ -1,29 +1,26 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
-  menuOpen = false;
-
-  constructor(
-    public authService: AuthService,
-    private router: Router
-  ) {}
+  readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
+  menuOpen = signal(false);
 
   toggleMenu(): void {
-    this.menuOpen = !this.menuOpen;
+    this.menuOpen.update(v => !v);
   }
 
   logout(): void {
     this.authService.logout();
-    this.menuOpen = false;
+    this.menuOpen.set(false);
     this.router.navigateByUrl('/');
   }
 }

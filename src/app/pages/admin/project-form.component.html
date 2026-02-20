@@ -52,14 +52,14 @@
         </div>
       </div>
 
-      @if (errorMessage) {
-        <div class="alert-error">{{ errorMessage }}</div>
+      @if (errorMessage()) {
+        <div class="alert-error">{{ errorMessage() }}</div>
       }
 
       <div class="form-actions">
         <button type="button" class="btn-cancel" (click)="onCancel()">Annulla</button>
-        <button type="submit" class="btn-save" [disabled]="submitting || form.invalid">
-          {{ submitting ? 'Salvataggio...' : (isEditing ? 'Aggiorna' : 'Crea') }}
+        <button type="submit" class="btn-save" [disabled]="submitting() || form.invalid">
+          {{ submitting() ? 'Salvataggio...' : (isEditing ? 'Aggiorna' : 'Crea') }}
         </button>
       </div>
     </form>

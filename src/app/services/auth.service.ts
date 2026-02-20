@@ -1,18 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { LoginRequest } from '../models/login-request.model';
 import { AuthResponse } from '../models/auth-response.model';
 import { RegisterRequest } from '../models/register-request.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = '/api/auth';
+  private readonly http = inject(HttpClient);
+  private apiUrl = `${environment.apiUrl}/auth`;
   private tokenKey = 'auth_token';
-
-  constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<AuthResponse> {
     const body: LoginRequest = { email, password };
@@ -36,7 +36,23 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!this.getToken();
+    if (!this.getToken()) {
+      return false;
+    }
+    if (this.isTokenExpired()) {
+      this.logout();
+      return false;
+    }
+    return true;
+  }
+
+  private isTokenExpired(): boolean {
+    const payload = this.getTokenPayload();
+    const exp = payload?.['exp'];
+    if (typeof exp !== 'number') {
+      return false;
+    }
+    return exp * 1000 < Date.now();
   }
 
   getToken(): string | null {

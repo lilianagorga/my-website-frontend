@@ -51,16 +51,16 @@
         }
       </div>
 
-      @if (successMessage) {
-        <div class="alert alert-success">{{ successMessage }}</div>
+      @if (successMessage()) {
+        <div class="alert alert-success">{{ successMessage() }}</div>
       }
 
-      @if (errorMessage) {
-        <div class="alert alert-error">{{ errorMessage }}</div>
+      @if (errorMessage()) {
+        <div class="alert alert-error">{{ errorMessage() }}</div>
       }
 
-      <button type="submit" class="btn-submit" [disabled]="submitting">
-        {{ submitting ? 'Registrazione in corso...' : 'Registrati' }}
+      <button type="submit" class="btn-submit" [disabled]="submitting()">
+        {{ submitting() ? 'Registrazione in corso...' : 'Registrati' }}
       </button>
     </form>
 

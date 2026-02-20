@@ -1,24 +1,24 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="Navigazione principale">
   <div class="navbar-container">
     <a class="navbar-brand" routerLink="/">Liliana Gorga</a>
 
-    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen">
+    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
 
-    <ul class="nav-links" [class.open]="menuOpen">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="menuOpen = false">Home</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen = false">Progetti</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen = false">Contatti</a></li>
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="menuOpen.set(false)">Home</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen.set(false)">Progetti</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen.set(false)">Contatti</a></li>
       @if (!authService.isLoggedIn()) {
-        <li><a routerLink="/login" routerLinkActive="active" (click)="menuOpen = false">Accedi</a></li>
-        <li><a routerLink="/register" routerLinkActive="active" (click)="menuOpen = false">Registrati</a></li>
+        <li><a routerLink="/login" routerLinkActive="active" (click)="menuOpen.set(false)">Accedi</a></li>
+        <li><a routerLink="/register" routerLinkActive="active" (click)="menuOpen.set(false)">Registrati</a></li>
       }
       @if (authService.isLoggedIn()) {
         @if (authService.isAdmin()) {
-          <li><a routerLink="/admin" routerLinkActive="active" (click)="menuOpen = false">Admin</a></li>
+          <li><a routerLink="/admin" routerLinkActive="active" (click)="menuOpen.set(false)">Admin</a></li>
         }
         <li><a class="btn-logout" (click)="logout()">Esci</a></li>
       }

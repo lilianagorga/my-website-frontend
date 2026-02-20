@@ -2,29 +2,33 @@
   <div class="admin-container">
     <h1 class="admin-title">Dashboard Admin</h1>
 
-    <div class="tabs">
+    <div class="tabs" role="tablist">
       <button
         class="tab"
-        [class.active]="activeTab === 'projects'"
+        role="tab"
+        [attr.aria-selected]="activeTab() === 'projects'"
+        [class.active]="activeTab() === 'projects'"
         (click)="switchTab('projects')">
         Progetti
       </button>
       <button
         class="tab"
-        [class.active]="activeTab === 'messages'"
+        role="tab"
+        [attr.aria-selected]="activeTab() === 'messages'"
+        [class.active]="activeTab() === 'messages'"
         (click)="switchTab('messages')">
         Messaggi
       </button>
     </div>
 
-    @if (activeTab === 'projects') {
-      <div class="tab-content">
+    @if (activeTab() === 'projects') {
+      <div class="tab-content" role="tabpanel">
         <div class="tab-header">
-          <h2>Progetti ({{ projects.length }})</h2>
+          <h2>Progetti ({{ projects().length }})</h2>
           <button class="btn-add" (click)="openAddProject()">+ Aggiungi Progetto</button>
         </div>
 
-        @if (projects.length === 0) {
+        @if (projects().length === 0) {
           <p class="empty">Nessun progetto presente.</p>
         } @else {
           <div class="table-wrapper">
@@ -37,12 +41,12 @@
                 </tr>
               </thead>
               <tbody>
-                @for (project of projects; track project.id) {
+                @for (project of projects(); track project.id) {
                   <tr>
                     <td>{{ project.title }}</td>
                     <td>
                       <div class="tech-tags">
-                        @for (tech of project.techStack; track tech) {
+                        @for (tech of project.techStack; track $index) {
                           <span class="tech-tag">{{ tech }}</span>
                         }
                       </div>
@@ -62,15 +66,15 @@
       </div>
     }
 
-    @if (activeTab === 'messages') {
-      <div class="tab-content">
-        <h2>Messaggi ({{ messages.length }})</h2>
+    @if (activeTab() === 'messages') {
+      <div class="tab-content" role="tabpanel">
+        <h2>Messaggi ({{ messages().length }})</h2>
 
-        @if (messages.length === 0) {
+        @if (messages().length === 0) {
           <p class="empty">Nessun messaggio ricevuto.</p>
         } @else {
           <div class="messages-list">
-            @for (msg of messages; track msg.id) {
+            @for (msg of messages(); track msg.id) {
               <div class="message-card">
                 <div class="message-header">
                   <div>
@@ -94,9 +98,9 @@
   </div>
 </section>
 
-@if (showProjectForm) {
+@if (showProjectForm()) {
   <app-project-form
-    [project]="editingProject"
+    [project]="editingProject()"
     (saved)="onProjectSaved()"
     (cancelled)="closeProjectForm()" />
 }

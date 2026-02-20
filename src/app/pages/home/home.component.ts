@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Project } from '../../models/project.model';
 import { PORTFOLIO_PROJECTS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   imports: [RouterLink],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
-  featuredProjects: Project[] = [];
+export class HomeComponent {
+  featuredProjects = PORTFOLIO_PROJECTS.slice(0, 3);
 
-  constructor() {}
-
-  ngOnInit(): void {
-    this.featuredProjects = PORTFOLIO_PROJECTS.slice(0, 3);
+  getSafeImageUrl(url: string | undefined | null): string {
+    if (url && (url.startsWith('/') || url.startsWith('https://'))) {
+      return url;
+    }
+    return '/projects/placeholder.svg';
   }
 }
