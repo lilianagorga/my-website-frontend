@@ -1,17 +1,17 @@
 :host {
-  --color-primary: #3F7D5A;
-  --color-primary-hover: #33684A;
-  --color-primary-light: rgba(63, 125, 90, 0.10);
-  --color-primary-light-strong: rgba(63, 125, 90, 0.18);
-  --color-primary-shadow: rgba(63, 125, 90, 0.25);
-  --color-primary-shadow-strong: rgba(63, 125, 90, 0.35);
-  --color-focus-ring: rgba(63, 125, 90, 0.2);
-  --color-accent: #76A987;
-  --color-accent-hover: #628F72;
-  --color-accent-light: rgba(118, 169, 135, 0.12);
+  --color-primary: #5D8A72;
+  --color-primary-hover: #4E775F;
+  --color-primary-light: rgba(93, 138, 114, 0.10);
+  --color-primary-light-strong: rgba(93, 138, 114, 0.16);
+  --color-primary-shadow: rgba(93, 138, 114, 0.18);
+  --color-primary-shadow-strong: rgba(93, 138, 114, 0.26);
+  --color-focus-ring: rgba(93, 138, 114, 0.16);
+  --color-accent: #86AD98;
+  --color-accent-hover: #739A86;
+  --color-accent-light: rgba(134, 173, 152, 0.12);
   --gradient-hero: linear-gradient(135deg, #f5faf7 0%, #e8f5e9 30%, #dcedc8 100%);
-  --gradient-card: linear-gradient(135deg, #3F7D5A 0%, #76A987 100%);
-  --shadow-glow: 0 0 40px rgba(118, 169, 135, 0.15);
+  --gradient-card: linear-gradient(135deg, #5D8A72 0%, #86AD98 100%);
+  --shadow-glow: 0 0 40px rgba(134, 173, 152, 0.12);
 }
 
 .register-page {
@@ -33,19 +33,6 @@
   border: 1px solid var(--color-border);
   animation: fadeInUp 0.5s ease both;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-primary));
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  }
 
   h1 {
     font-size: 1.75rem;
@@ -144,7 +131,7 @@ form {
     background-position: 100% center;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px var(--color-primary-shadow-strong),
-                0 0 20px rgba(118, 169, 135, 0.2);
+                0 0 20px rgba(134, 173, 152, 0.16);
   }
 
   &:disabled {
