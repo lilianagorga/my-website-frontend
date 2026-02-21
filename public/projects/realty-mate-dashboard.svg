@@ -1,32 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">Realty Mate Dashboard</title>
-  <desc id="desc">Illustrazione dashboard gestionale immobiliare</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="rmd-title rmd-desc">
+  <title id="rmd-title">Realty Mate Dashboard</title>
+  <desc id="rmd-desc">Real estate admin dashboard with chart and graphs</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f1f1f1"/>
-      <stop offset="100%" stop-color="#dadada"/>
+    <linearGradient id="rmd-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafe"/>
+      <stop offset="50%" stop-color="#f0eeff"/>
+      <stop offset="100%" stop-color="#e8f8f8"/>
+    </linearGradient>
+    <linearGradient id="rmd-screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#4834d4"/>
+    </linearGradient>
+    <linearGradient id="rmd-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0eeff"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <rect x="190" y="110" width="820" height="500" rx="26" fill="#ffffff" stroke="#c8c8c8" stroke-width="7"/>
-  <rect x="190" y="110" width="820" height="72" rx="26" fill="#e6e6e6"/>
-  <circle cx="240" cy="146" r="10" fill="#9f9f9f"/>
-  <circle cx="272" cy="146" r="10" fill="#8d8d8d"/>
-  <circle cx="304" cy="146" r="10" fill="#7b7b7b"/>
-  <rect x="250" y="230" width="190" height="320" rx="16" fill="#efefef"/>
-  <rect x="470" y="230" width="500" height="150" rx="16" fill="#efefef"/>
-  <rect x="470" y="400" width="300" height="150" rx="16" fill="#efefef"/>
-  <rect x="790" y="400" width="180" height="150" rx="16" fill="#efefef"/>
-  <rect x="515" y="285" width="48" height="60" rx="8" fill="#5f5f5f"/>
-  <rect x="580" y="255" width="48" height="90" rx="8" fill="#6a6a6a"/>
-  <rect x="645" y="270" width="48" height="75" rx="8" fill="#7a7a7a"/>
-  <rect x="710" y="238" width="48" height="107" rx="8" fill="#4e4e4e"/>
-  <rect x="275" y="268" width="140" height="16" rx="8" fill="#b3b3b3"/>
-  <rect x="275" y="308" width="120" height="14" rx="7" fill="#bdbdbd"/>
-  <rect x="275" y="344" width="96" height="14" rx="7" fill="#bdbdbd"/>
-  <rect x="275" y="388" width="140" height="16" rx="8" fill="#b3b3b3"/>
-  <rect x="275" y="428" width="110" height="14" rx="7" fill="#bdbdbd"/>
-  <path d="M845 448a42 42 0 1 1-42 42h42z" fill="#666"/>
-  <path d="M845 448v42h42a42 42 0 0 0-42-42z" fill="#9a9a9a"/>
-  <text x="600" y="665" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="#4f4f4f">REALTY MATE DASHBOARD</text>
+  <style>
+    @keyframes rmd-bar1 {
+      0%{transform:scaleY(0)} 60%{transform:scaleY(1)} 100%{transform:scaleY(1)}
+    }
+    @keyframes rmd-bar2 {
+      0%,15%{transform:scaleY(0)} 75%{transform:scaleY(1)} 100%{transform:scaleY(1)}
+    }
+    @keyframes rmd-bar3 {
+      0%,30%{transform:scaleY(0)} 90%{transform:scaleY(1)} 100%{transform:scaleY(1)}
+    }
+    @keyframes rmd-bar4 {
+      0%,45%{transform:scaleY(0)} 100%{transform:scaleY(1)}
+    }
+    @keyframes rmd-pie {
+      from{transform:rotate(0deg)} to{transform:rotate(360deg)}
+    }
+    @keyframes rmd-pulse {
+      0%,100%{opacity:.5;r:4} 50%{opacity:1;r:6}
+    }
+    .rmd-b1{animation:rmd-bar1 2s ease-out infinite;transform-origin:330px 350px}
+    .rmd-b2{animation:rmd-bar2 2s ease-out infinite;transform-origin:360px 350px}
+    .rmd-b3{animation:rmd-bar3 2s ease-out infinite;transform-origin:390px 350px}
+    .rmd-b4{animation:rmd-bar4 2s ease-out infinite;transform-origin:420px 350px}
+    .rmd-pie{animation:rmd-pie 12s linear infinite;transform-origin:555px 278px}
+    .rmd-dot{animation:rmd-pulse 2s ease-in-out infinite}
+  </style>
+  <rect width="800" height="500" fill="url(#rmd-bg)"/>
+  <circle cx="95" cy="85" r="72" fill="rgba(108,92,231,.06)"/>
+  <circle cx="705" cy="415" r="88" fill="rgba(0,206,201,.06)"/>
+
+  <!-- Monitor frame -->
+  <rect x="155" y="105" width="490" height="310" rx="14" fill="url(#rmd-screen)"/>
+  <!-- Screen content area -->
+  <rect x="170" y="120" width="460" height="280" rx="8" fill="url(#rmd-card)"/>
+  <!-- Monitor stand -->
+  <rect x="375" y="415" width="50" height="30" rx="4" fill="#a29bfe"/>
+  <rect x="340" y="442" width="120" height="10" rx="5" fill="#a29bfe"/>
+
+  <!-- Sidebar -->
+  <rect x="170" y="120" width="80" height="280" rx="8" fill="rgba(108,92,231,.08)"/>
+  <rect x="182" y="142" width="56" height="8" rx="4" fill="#6c5ce7" opacity=".5"/>
+  <rect x="182" y="162" width="56" height="8" rx="4" fill="#6c5ce7" opacity=".3"/>
+  <rect x="182" y="182" width="56" height="8" rx="4" fill="#6c5ce7" opacity=".3"/>
+  <rect x="182" y="202" width="56" height="8" rx="4" fill="#6c5ce7" opacity=".3"/>
+
+  <!-- Bar chart area -->
+  <rect x="265" y="230" width="210" height="150" rx="6" fill="rgba(255,255,255,.7)"/>
+  <!-- Chart axes -->
+  <line x1="280" y1="365" x2="460" y2="365" stroke="#b2bec3" stroke-width="1.5"/>
+  <line x1="280" y1="240" x2="280" y2="365" stroke="#b2bec3" stroke-width="1.5"/>
+  <!-- Bars -->
+  <rect class="rmd-b1" x="308" y="295" width="24" height="70" rx="4" fill="#00cec9"/>
+  <rect class="rmd-b2" x="340" y="275" width="24" height="90" rx="4" fill="#fd79a8"/>
+  <rect class="rmd-b3" x="372" y="308" width="24" height="57" rx="4" fill="#fdcb6e"/>
+  <rect class="rmd-b4" x="404" y="258" width="24" height="107" rx="4" fill="#6c5ce7"/>
+
+  <!-- Pie chart area -->
+  <rect x="490" y="230" width="130" height="130" rx="6" fill="rgba(255,255,255,.7)"/>
+  <g class="rmd-pie">
+    <circle cx="555" cy="278" r="42" fill="none" stroke="#6c5ce7" stroke-width="20" stroke-dasharray="80 185"/>
+    <circle cx="555" cy="278" r="42" fill="none" stroke="#00cec9" stroke-width="20" stroke-dasharray="55 210" stroke-dashoffset="-80"/>
+    <circle cx="555" cy="278" r="42" fill="none" stroke="#fd79a8" stroke-width="20" stroke-dasharray="50 215" stroke-dashoffset="-135"/>
+  </g>
+  <circle cx="555" cy="278" r="22" fill="white"/>
+
+  <!-- Stats cards -->
+  <rect x="265" y="135" width="90" height="82" rx="8" fill="rgba(108,92,231,.1)"/>
+  <text x="310" y="172" text-anchor="middle" font-size="20" font-weight="700" fill="#6c5ce7">142</text>
+  <text x="310" y="192" text-anchor="middle" font-size="9" fill="#636e72">Properties</text>
+
+  <rect x="368" y="135" width="90" height="82" rx="8" fill="rgba(0,206,201,.1)"/>
+  <text x="413" y="172" text-anchor="middle" font-size="20" font-weight="700" fill="#00cec9">98%</text>
+  <text x="413" y="192" text-anchor="middle" font-size="9" fill="#636e72">Occupancy</text>
+
+  <rect x="471" y="135" width="90" height="82" rx="8" fill="rgba(253,121,168,.1)"/>
+  <text x="516" y="172" text-anchor="middle" font-size="20" font-weight="700" fill="#fd79a8">€2.4M</text>
+  <text x="516" y="192" text-anchor="middle" font-size="9" fill="#636e72">Revenue</text>
+
+  <!-- Dots -->
+  <circle class="rmd-dot" cx="148" cy="260" r="4" fill="#6c5ce7" opacity=".4"/>
+  <circle class="rmd-dot" cx="648" cy="185" r="4" fill="#fd79a8" opacity=".4" style="animation-delay:.6s"/>
+  <circle cx="148" cy="390" r="3" fill="#00cec9" opacity=".35"/>
+  <circle cx="650" cy="385" r="3" fill="#fdcb6e" opacity=".35"/>
 </svg>

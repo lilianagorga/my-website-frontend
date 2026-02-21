@@ -1,24 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">Wear Again</title>
-  <desc id="desc">Illustrazione e-commerce second hand</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="wa-title wa-desc">
+  <title id="wa-title">Wear Again</title>
+  <desc id="wa-desc">Sustainable fashion e-commerce with recycling motif</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f4f4f4"/>
-      <stop offset="100%" stop-color="#dedede"/>
+    <linearGradient id="wa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafe"/>
+      <stop offset="50%" stop-color="#f0eeff"/>
+      <stop offset="100%" stop-color="#fce4ec"/>
+    </linearGradient>
+    <linearGradient id="wa-dress" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fd79a8"/>
+      <stop offset="100%" stop-color="#6c5ce7"/>
+    </linearGradient>
+    <linearGradient id="wa-hang" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe"/>
+      <stop offset="100%" stop-color="#6c5ce7"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <circle cx="190" cy="120" r="110" fill="#ffffff" opacity="0.6"/>
-  <circle cx="1020" cy="620" r="150" fill="#ffffff" opacity="0.45"/>
-  <rect x="350" y="150" width="500" height="380" rx="32" fill="#ffffff" stroke="#cfcfcf" stroke-width="6"/>
-  <rect x="430" y="225" width="340" height="230" rx="18" fill="#ececec" stroke="#bdbdbd" stroke-width="5"/>
-  <path d="M545 245c-18 0-32 14-32 32v18h18v-16c0-9 7-16 16-16h10v-18h-12z" fill="#585858"/>
-  <path d="M655 245c18 0 32 14 32 32v18h-18v-16c0-9-7-16-16-16h-10v-18h12z" fill="#585858"/>
-  <path d="M512 287h176l-26 150H538l-26-150z" fill="#7c7c7c"/>
-  <path d="M517 322h166l-8 46H525l-8-46z" fill="#5b5b5b" opacity="0.8"/>
-  <path d="M280 380a110 110 0 0 1 120-95" fill="none" stroke="#646464" stroke-width="20" stroke-linecap="round"/>
-  <polygon points="390,252 435,315 360,322" fill="#646464"/>
-  <path d="M920 420a110 110 0 0 1-120 95" fill="none" stroke="#646464" stroke-width="20" stroke-linecap="round"/>
-  <polygon points="810,548 765,485 840,478" fill="#646464"/>
-  <text x="600" y="615" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4d4d4d">WEAR AGAIN</text>
+  <style>
+    @keyframes wa-float {
+      0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)}
+    }
+    @keyframes wa-spin {
+      from{transform:rotate(0deg)} to{transform:rotate(360deg)}
+    }
+    @keyframes wa-pulse {
+      0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.35)}
+    }
+    .wa-garment{animation:wa-float 3s ease-in-out infinite;transform-origin:400px 270px}
+    .wa-arrows{animation:wa-spin 8s linear infinite;transform-origin:400px 295px}
+    .wa-s1{animation:wa-pulse 2s ease-in-out infinite}
+    .wa-s2{animation:wa-pulse 2s ease-in-out .5s infinite}
+    .wa-s3{animation:wa-pulse 2s ease-in-out 1s infinite}
+    .wa-s4{animation:wa-pulse 2s ease-in-out 1.5s infinite}
+  </style>
+  <rect width="800" height="500" fill="url(#wa-bg)"/>
+  <circle cx="90" cy="90" r="80" fill="rgba(108,92,231,.06)"/>
+  <circle cx="710" cy="410" r="100" fill="rgba(253,121,168,.07)"/>
+  <circle cx="680" cy="70" r="50" fill="rgba(0,206,201,.06)"/>
+
+  <!-- Recycling arrows (rotate) -->
+  <g class="wa-arrows">
+    <path d="M400 175 L422 148 L416 162 A72 72 0 0 1 460 248 L444 243 A54 54 0 0 0 406 169 Z" fill="#00cec9"/>
+    <path d="M460 248 L490 255 L476 249 A72 72 0 0 1 355 320 L360 304 A54 54 0 0 0 462 262 Z" fill="#00cec9"/>
+    <path d="M355 320 L333 344 L345 329 A72 72 0 0 1 338 160 L348 174 A54 54 0 0 0 344 312 Z" fill="#00cec9"/>
+  </g>
+
+  <!-- Garment (float) -->
+  <g class="wa-garment">
+    <path d="M400 158 Q400 142 416 137 Q432 132 432 148" stroke="url(#wa-hang)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <line x1="338" y1="172" x2="462" y2="172" stroke="url(#wa-hang)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M338 172 Q318 178 316 198" stroke="url(#wa-hang)" stroke-width="4" fill="none"/>
+    <path d="M462 172 Q482 178 484 198" stroke="url(#wa-hang)" stroke-width="4" fill="none"/>
+    <path d="M316 198 Q308 205 304 218 L292 370 Q292 384 306 384 L494 384 Q508 384 508 370 L496 218 Q492 205 484 198 L462 172 L400 188 L338 172 Z" fill="url(#wa-dress)" opacity=".92"/>
+    <path d="M292 338 Q350 355 400 350 Q450 345 508 338 L508 370 Q508 384 494 384 L306 384 Q292 384 292 370 Z" fill="rgba(255,255,255,.14)"/>
+    <path d="M338 186 Q400 202 462 186" stroke="rgba(255,255,255,.38)" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Sparkles -->
+  <circle class="wa-s1" cx="225" cy="205" r="6" fill="#fdcb6e"/>
+  <circle class="wa-s2" cx="574" cy="182" r="5" fill="#fd79a8"/>
+  <circle class="wa-s3" cx="195" cy="345" r="4" fill="#6c5ce7"/>
+  <circle class="wa-s4" cx="595" cy="358" r="6" fill="#00cec9"/>
+
+  <!-- Dots -->
+  <circle cx="155" cy="260" r="3.5" fill="#6c5ce7" opacity=".35"/>
+  <circle cx="638" cy="195" r="4" fill="#fd79a8" opacity=".35"/>
+  <circle cx="148" cy="388" r="3" fill="#00cec9" opacity=".45"/>
+  <circle cx="645" cy="295" r="4" fill="#fdcb6e" opacity=".45"/>
 </svg>

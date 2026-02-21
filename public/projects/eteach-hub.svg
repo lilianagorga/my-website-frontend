@@ -1,24 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">eTeach Hub</title>
-  <desc id="desc">Illustrazione piattaforma e-learning</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="et-title et-desc">
+  <title id="et-title">eTeach Hub</title>
+  <desc id="et-desc">Online school platform with book, lightbulb and graduation caps</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f4f4f4"/>
-      <stop offset="100%" stop-color="#dfdfdf"/>
+    <linearGradient id="et-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafe"/>
+      <stop offset="50%" stop-color="#e8f8f8"/>
+      <stop offset="100%" stop-color="#f0eeff"/>
     </linearGradient>
+    <linearGradient id="et-book-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00cec9"/>
+      <stop offset="100%" stop-color="#00b5b0"/>
+    </linearGradient>
+    <linearGradient id="et-book-r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#a29bfe"/>
+    </linearGradient>
+    <radialGradient id="et-glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#fdcb6e" stop-opacity=".6"/>
+      <stop offset="100%" stop-color="#fdcb6e" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <rect x="250" y="145" width="700" height="390" rx="24" fill="#ffffff" stroke="#c9c9c9" stroke-width="7"/>
-  <rect x="300" y="195" width="600" height="290" rx="14" fill="#ececec"/>
-  <rect x="500" y="540" width="200" height="20" rx="10" fill="#666"/>
-  <rect x="450" y="560" width="300" height="24" rx="12" fill="#7a7a7a"/>
-  <polygon points="600,228 760,290 600,352 440,290" fill="#5f5f5f"/>
-  <polygon points="600,269 700,308 600,347 500,308" fill="#ececec"/>
-  <rect x="750" y="295" width="14" height="80" fill="#5f5f5f"/>
-  <circle cx="757" cy="386" r="16" fill="#5f5f5f"/>
-  <rect x="360" y="392" width="160" height="16" rx="8" fill="#bababa"/>
-  <rect x="360" y="424" width="130" height="14" rx="7" fill="#c6c6c6"/>
-  <rect x="670" y="392" width="160" height="16" rx="8" fill="#bababa"/>
-  <rect x="670" y="424" width="120" height="14" rx="7" fill="#c6c6c6"/>
-  <text x="600" y="654" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="700" fill="#4f4f4f">eTEACH HUB</text>
+  <style>
+    @keyframes et-glow {
+      0%,100%{opacity:.4;r:38} 50%{opacity:.9;r:52}
+    }
+    @keyframes et-float1 {
+      0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}
+    }
+    @keyframes et-float2 {
+      0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}
+    }
+    @keyframes et-flutter {
+      0%,100%{transform:skewX(0deg)} 50%{transform:skewX(2deg)}
+    }
+    @keyframes et-pulse {
+      0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)}
+    }
+    .et-glow{animation:et-glow 2.5s ease-in-out infinite}
+    .et-bulb{animation:et-float1 3s ease-in-out infinite;transform-origin:400px 165px}
+    .et-book{animation:et-flutter 4s ease-in-out infinite;transform-origin:400px 320px}
+    .et-cap1{animation:et-float1 3.2s ease-in-out infinite;transform-origin:258px 292px}
+    .et-cap2{animation:et-float2 2.8s ease-in-out .4s infinite;transform-origin:542px 292px}
+    .et-sp{animation:et-pulse 2s ease-in-out infinite}
+  </style>
+  <rect width="800" height="500" fill="url(#et-bg)"/>
+  <circle cx="95" cy="85" r="72" fill="rgba(108,92,231,.06)"/>
+  <circle cx="705" cy="415" r="88" fill="rgba(0,206,201,.07)"/>
+
+  <!-- Glow behind bulb -->
+  <circle class="et-glow" cx="400" cy="175" r="45" fill="url(#et-glow)"/>
+
+  <!-- Lightbulb (float) -->
+  <g class="et-bulb">
+    <ellipse cx="400" cy="152" rx="32" ry="34" fill="#fdcb6e"/>
+    <rect x="386" y="180" width="28" height="12" rx="4" fill="#e6b800"/>
+    <rect x="390" y="192" width="20" height="8" rx="3" fill="#d4a800"/>
+    <!-- Rays -->
+    <line x1="400" y1="108" x2="400" y2="96" stroke="#fdcb6e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="432" y1="120" x2="440" y2="112" stroke="#fdcb6e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="368" y1="120" x2="360" y2="112" stroke="#fdcb6e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="444" y1="152" x2="456" y2="152" stroke="#fdcb6e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="356" y1="152" x2="344" y2="152" stroke="#fdcb6e" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Open book (flutter) -->
+  <g class="et-book">
+    <!-- Spine -->
+    <rect x="394" y="248" width="12" height="155" rx="3" fill="#4834d4"/>
+    <!-- Left page -->
+    <path d="M400 250 L250 270 L250 395 L400 380 Z" fill="url(#et-book-l)" rx="6"/>
+    <!-- Right page -->
+    <path d="M400 250 L550 270 L550 395 L400 380 Z" fill="url(#et-book-r)" rx="6"/>
+    <!-- Page lines left -->
+    <line x1="268" y1="300" x2="388" y2="292" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+    <line x1="268" y1="320" x2="388" y2="312" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+    <line x1="268" y1="340" x2="388" y2="332" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+    <!-- Page lines right -->
+    <line x1="414" y1="292" x2="532" y2="300" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+    <line x1="414" y1="312" x2="532" y2="320" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+    <line x1="414" y1="332" x2="532" y2="340" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+  </g>
+
+  <!-- Graduation cap left (float) -->
+  <g class="et-cap1">
+    <polygon points="228,292 258,278 288,292 258,306" fill="#fd79a8"/>
+    <rect x="252" y="292" width="12" height="22" rx="3" fill="#e84393"/>
+    <circle cx="264" cy="314" r="5" fill="#fd79a8"/>
+    <line x1="288" y1="292" x2="298" y2="310" stroke="#fd79a8" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Graduation cap right (float) -->
+  <g class="et-cap2">
+    <polygon points="512,292 542,278 572,292 542,306" fill="#fd79a8"/>
+    <rect x="536" y="292" width="12" height="22" rx="3" fill="#e84393"/>
+    <circle cx="548" cy="314" r="5" fill="#fd79a8"/>
+    <line x1="572" y1="292" x2="582" y2="310" stroke="#fd79a8" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Sparkles -->
+  <circle class="et-sp" cx="195" cy="195" r="5" fill="#fdcb6e"/>
+  <circle class="et-sp" cx="605" cy="175" r="4" fill="#fd79a8" style="animation-delay:.5s"/>
+  <circle class="et-sp" cx="180" cy="370" r="4" fill="#6c5ce7" style="animation-delay:1s"/>
+  <circle class="et-sp" cx="615" cy="380" r="5" fill="#00cec9" style="animation-delay:1.5s"/>
+
+  <!-- Dots -->
+  <circle cx="150" cy="260" r="3.5" fill="#6c5ce7" opacity=".35"/>
+  <circle cx="645" cy="210" r="3" fill="#fd79a8" opacity=".35"/>
 </svg>

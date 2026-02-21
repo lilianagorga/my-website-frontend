@@ -1,49 +1,67 @@
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 .hero {
   min-height: calc(100vh - 64px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface-tint) 100%);
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(253, 121, 168, 0.10) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
 }
 
 .hero-content {
   max-width: 680px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-greeting {
   font-size: 1.125rem;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-weight: 500;
   margin-bottom: 0.5rem;
-  animation: fadeInUp 0.6s ease both;
+  animation: fadeInDown 0.6s ease both;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
-  color: var(--color-text);
+  background: var(--gradient-card);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 0.75rem;
-  animation: fadeInUp 0.6s ease 0.1s both;
+  animation: gradientShift 4s ease infinite;
 }
 
 .hero-subtitle {
@@ -51,15 +69,15 @@
   color: var(--color-text-secondary);
   font-weight: 400;
   margin-bottom: 1.5rem;
-  animation: fadeInUp 0.6s ease 0.2s both;
+  animation: fadeInUp 0.7s ease 0.15s both;
 }
 
 .hero-description {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 2.5rem;
-  animation: fadeInUp 0.6s ease 0.3s both;
+  animation: fadeInUp 0.7s ease 0.25s both;
 }
 
 .hero-actions {
@@ -67,7 +85,7 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  animation: fadeInUp 0.6s ease 0.4s both;
+  animation: fadeInUp 0.7s ease 0.35s both;
 }
 
 .btn {
@@ -82,14 +100,15 @@
 }
 
 .btn-primary {
-  background: var(--color-primary);
+  background: var(--gradient-card);
+  background-size: 200% auto;
   color: #fff;
   box-shadow: 0 4px 14px var(--color-primary-shadow);
 
   &:hover {
-    background: var(--color-primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--color-primary-shadow-strong);
+    background-position: 100% center;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px var(--color-primary-shadow-strong);
   }
 }
 
@@ -100,6 +119,7 @@
 
   &:hover {
     background: var(--color-primary-light);
+    border-color: var(--color-accent);
     transform: translateY(-2px);
   }
 }
@@ -135,11 +155,31 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(108, 92, 231, 0.15), transparent);
+    opacity: 0;
+    transition: opacity var(--transition);
+    z-index: 1;
+    pointer-events: none;
+  }
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light-strong);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(108, 92, 231, 0.08);
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
@@ -147,10 +187,10 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   .project-card:hover & {
-    transform: scale(1.03);
+    transform: scale(1.06);
   }
 }
 
@@ -180,12 +220,36 @@
 }
 
 .tech-tag {
-  background: var(--color-primary-light);
-  color: var(--color-primary);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+  transition: transform var(--transition), box-shadow var(--transition);
+
+  &:nth-child(4n+1) {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+  }
+
+  &:nth-child(4n+2) {
+    background: var(--color-accent-light);
+    color: var(--color-accent-hover);
+  }
+
+  &:nth-child(4n+3) {
+    background: rgba(0, 206, 201, 0.12);
+    color: var(--color-secondary-hover);
+  }
+
+  &:nth-child(4n+4) {
+    background: rgba(253, 203, 110, 0.2);
+    color: #e17055;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .project-links {
@@ -197,10 +261,26 @@
     font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
+    position: relative;
     transition: color var(--transition);
 
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width var(--transition);
+    }
+
     &:hover {
-      text-decoration: underline;
+      color: var(--color-primary-hover);
+
+      &::after {
+        width: 100%;
+      }
     }
   }
 }

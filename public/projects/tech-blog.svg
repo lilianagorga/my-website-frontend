@@ -1,28 +1,103 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">Tech Blog</title>
-  <desc id="desc">Illustrazione blog tecnico con codice e contenuti</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="tb-title tb-desc">
+  <title id="tb-title">Tech Blog</title>
+  <desc id="tb-desc">Technical blog with laptop screen and code lines</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f2f2f2"/>
-      <stop offset="100%" stop-color="#d9d9d9"/>
+    <linearGradient id="tb-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafe"/>
+      <stop offset="50%" stop-color="#f0eeff"/>
+      <stop offset="100%" stop-color="#fce4ec"/>
     </linearGradient>
+    <linearGradient id="tb-laptop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4834d4"/>
+      <stop offset="100%" stop-color="#2d1b8e"/>
+    </linearGradient>
+    <linearGradient id="tb-tag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fd79a8"/>
+      <stop offset="100%" stop-color="#6c5ce7"/>
+    </linearGradient>
+    <clipPath id="tb-screen-clip">
+      <rect x="212" y="128" width="376" height="230" rx="6"/>
+    </clipPath>
   </defs>
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <rect x="240" y="130" width="720" height="460" rx="24" fill="#ffffff" stroke="#c8c8c8" stroke-width="7"/>
-  <rect x="240" y="130" width="720" height="72" rx="24" fill="#e8e8e8"/>
-  <circle cx="290" cy="166" r="10" fill="#a0a0a0"/>
-  <circle cx="322" cy="166" r="10" fill="#8f8f8f"/>
-  <circle cx="354" cy="166" r="10" fill="#7d7d7d"/>
-  <rect x="300" y="245" width="270" height="290" rx="14" fill="#efefef"/>
-  <rect x="600" y="245" width="300" height="120" rx="14" fill="#efefef"/>
-  <rect x="600" y="385" width="300" height="150" rx="14" fill="#efefef"/>
-  <path d="M370 360l-44-42 44-42" fill="none" stroke="#5a5a5a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M500 276l44 42-44 42" fill="none" stroke="#5a5a5a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M436 267l-20 103" stroke="#777" stroke-width="12" stroke-linecap="round"/>
-  <rect x="640" y="286" width="220" height="18" rx="9" fill="#7b7b7b"/>
-  <rect x="640" y="320" width="150" height="14" rx="7" fill="#aaaaaa"/>
-  <rect x="640" y="423" width="220" height="18" rx="9" fill="#7b7b7b"/>
-  <rect x="640" y="457" width="240" height="14" rx="7" fill="#b0b0b0"/>
-  <rect x="640" y="485" width="200" height="14" rx="7" fill="#b0b0b0"/>
-  <text x="600" y="655" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4e4e4e">TECH BLOG</text>
+  <style>
+    @keyframes tb-line1 {
+      0%{clip-path:inset(0 100% 0 0)} 20%{clip-path:inset(0 0% 0 0)} 100%{clip-path:inset(0 0% 0 0)}
+    }
+    @keyframes tb-line2 {
+      0%,15%{clip-path:inset(0 100% 0 0)} 35%{clip-path:inset(0 0% 0 0)} 100%{clip-path:inset(0 0% 0 0)}
+    }
+    @keyframes tb-line3 {
+      0%,30%{clip-path:inset(0 100% 0 0)} 50%{clip-path:inset(0 0% 0 0)} 100%{clip-path:inset(0 0% 0 0)}
+    }
+    @keyframes tb-line4 {
+      0%,45%{clip-path:inset(0 100% 0 0)} 65%{clip-path:inset(0 0% 0 0)} 100%{clip-path:inset(0 0% 0 0)}
+    }
+    @keyframes tb-line5 {
+      0%,60%{clip-path:inset(0 100% 0 0)} 80%{clip-path:inset(0 0% 0 0)} 100%{clip-path:inset(0 0% 0 0)}
+    }
+    @keyframes tb-tag {
+      0%,100%{transform:scale(1)} 50%{transform:scale(1.06)}
+    }
+    @keyframes tb-cursor {
+      0%,100%{opacity:1} 50%{opacity:0}
+    }
+    @keyframes tb-sp {
+      0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.35)}
+    }
+    .tb-l1{animation:tb-line1 4s ease both infinite}
+    .tb-l2{animation:tb-line2 4s ease both infinite}
+    .tb-l3{animation:tb-line3 4s ease both infinite}
+    .tb-l4{animation:tb-line4 4s ease both infinite}
+    .tb-l5{animation:tb-line5 4s ease both infinite}
+    .tb-tag{animation:tb-tag 3s ease-in-out infinite;transform-origin:400px 232px}
+    .tb-cursor{animation:tb-cursor 1s step-end infinite}
+    .tb-sp{animation:tb-sp 2s ease-in-out infinite}
+  </style>
+  <rect width="800" height="500" fill="url(#tb-bg)"/>
+  <circle cx="95" cy="85" r="72" fill="rgba(108,92,231,.06)"/>
+  <circle cx="705" cy="415" r="88" fill="rgba(253,121,168,.07)"/>
+
+  <!-- Laptop lid -->
+  <rect x="195" y="115" width="410" height="248" rx="12" fill="url(#tb-laptop)"/>
+  <!-- Screen bezel inner -->
+  <rect x="208" y="126" width="384" height="234" rx="8" fill="#1a0e6e"/>
+
+  <!-- Screen content (clipped) -->
+  <g clip-path="url(#tb-screen-clip)">
+    <!-- Screen bg -->
+    <rect x="212" y="128" width="376" height="230" fill="#1a0e6e"/>
+
+    <!-- Big code tag (pulse) -->
+    <g class="tb-tag">
+      <text x="400" y="250" text-anchor="middle" font-size="52" font-weight="800" font-family="monospace" fill="url(#tb-tag)" opacity=".85">&lt;/&gt;</text>
+    </g>
+
+    <!-- Code lines (typing effect) -->
+    <rect class="tb-l1" x="228" y="148" width="130" height="9" rx="4" fill="#00cec9"/>
+    <rect class="tb-l2" x="228" y="168" width="96" height="9" rx="4" fill="#fd79a8"/>
+    <rect class="tb-l3" x="228" y="188" width="115" height="9" rx="4" fill="#fdcb6e"/>
+    <rect class="tb-l4" x="228" y="208" width="78" height="9" rx="4" fill="#00cec9"/>
+    <rect class="tb-l5" x="228" y="228" width="105" height="9" rx="4" fill="#fd79a8"/>
+
+    <!-- Blinking cursor -->
+    <rect class="tb-cursor" x="362" y="288" width="2.5" height="18" rx="1" fill="#fdcb6e"/>
+  </g>
+
+  <!-- Camera dot -->
+  <circle cx="400" cy="120" r="4" fill="#2d1b8e"/>
+
+  <!-- Laptop base -->
+  <path d="M155 363 L645 363 L680 390 Q680 400 670 400 L130 400 Q120 400 120 390 Z" fill="url(#tb-laptop)"/>
+  <!-- Touchpad -->
+  <rect x="360" y="372" width="80" height="20" rx="5" fill="rgba(255,255,255,.1)"/>
+
+  <!-- Sparkles -->
+  <circle class="tb-sp" cx="180" cy="190" r="5" fill="#fdcb6e"/>
+  <circle class="tb-sp" cx="618" cy="168" r="4" fill="#fd79a8" style="animation-delay:.5s"/>
+  <circle class="tb-sp" cx="168" cy="368" r="4" fill="#6c5ce7" style="animation-delay:1s"/>
+  <circle class="tb-sp" cx="622" cy="378" r="5" fill="#00cec9" style="animation-delay:1.5s"/>
+
+  <!-- Dots -->
+  <circle cx="148" cy="278" r="3.5" fill="#6c5ce7" opacity=".35"/>
+  <circle cx="648" cy="240" r="3" fill="#fd79a8" opacity=".35"/>
 </svg>

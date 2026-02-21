@@ -1,8 +1,3 @@
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -17,14 +12,14 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
+  background: rgba(45, 52, 54, 0.5);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
   padding: 2rem;
-  animation: fadeIn 0.2s ease both;
+  animation: fadeInScale 0.2s ease both;
 }
 
 .modal {
@@ -35,14 +30,31 @@
   max-width: 560px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(108, 92, 231, 0.2);
   animation: slideUp 0.3s ease both;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-card);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
 
   h2 {
     font-size: 1.35rem;
     font-weight: 700;
-    color: var(--color-text);
+    background: var(--gradient-card);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
+    animation: gradientShift 4s ease infinite;
   }
 }
 
@@ -139,23 +151,28 @@ form {
 
 .btn-save {
   padding: 0.6rem 1.5rem;
-  background: var(--color-primary);
+  background: var(--gradient-card);
+  background-size: 200% auto;
   color: #fff;
   border: none;
   border-radius: var(--radius-md);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
+  transition: background-position var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px var(--color-primary-shadow);
 
   &:hover:not(:disabled) {
-    background: var(--color-primary-hover);
+    background-position: 100% center;
     transform: translateY(-1px);
+    box-shadow: 0 8px 25px var(--color-primary-shadow-strong), var(--shadow-glow);
   }
 
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
+    filter: grayscale(1);
     cursor: not-allowed;
+    box-shadow: none;
   }
 }
 

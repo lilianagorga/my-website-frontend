@@ -1,8 +1,19 @@
 .footer {
-  background: var(--color-footer-bg);
+  background: linear-gradient(135deg, #2d3436 0%, #1e272e 100%);
   color: #ccc;
   padding: 2.5rem 0;
   margin-top: auto;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-accent);
+  }
 }
 
 .footer-container {
@@ -19,6 +30,7 @@
 .copyright {
   font-size: 0.875rem;
   margin: 0;
+  color: #b2bec3;
 }
 
 .social-links {
@@ -31,8 +43,8 @@
     display: flex;
 
     &:hover {
-      color: #fff;
-      transform: translateY(-2px);
+      color: var(--color-accent);
+      transform: translateY(-3px) scale(1.1);
     }
   }
 }

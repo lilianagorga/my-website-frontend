@@ -1,22 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">Realty Mate</title>
-  <desc id="desc">Illustrazione app immobiliare con mappa e case</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="rm-title rm-desc">
+  <title id="rm-title">Realty Mate</title>
+  <desc id="rm-desc">Real estate app with house, map pin and search waves</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f3f3f3"/>
-      <stop offset="100%" stop-color="#dcdcdc"/>
+    <linearGradient id="rm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafe"/>
+      <stop offset="50%" stop-color="#e8f8f8"/>
+      <stop offset="100%" stop-color="#f0eeff"/>
+    </linearGradient>
+    <linearGradient id="rm-house" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00cec9"/>
+    </linearGradient>
+    <linearGradient id="rm-roof" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a29bfe"/>
+      <stop offset="100%" stop-color="#6c5ce7"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <rect x="230" y="170" width="740" height="430" rx="28" fill="#ffffff" stroke="#c7c7c7" stroke-width="7"/>
-  <path d="M270 530l150-210 110 95 180-225 220 340H270z" fill="#e5e5e5"/>
-  <path d="M275 520l210-220 95 90 160-160 165 290H275z" fill="#d5d5d5"/>
-  <path d="M445 390l105-90 105 90v118H445V390z" fill="#5f5f5f"/>
-  <rect x="486" y="445" width="38" height="63" rx="6" fill="#ececec"/>
-  <rect x="580" y="428" width="45" height="30" rx="5" fill="#ececec"/>
-  <path d="M815 270c0 64-92 160-92 160s-92-96-92-160a92 92 0 1 1 184 0z" fill="#5a5a5a"/>
-  <circle cx="723" cy="270" r="38" fill="#f0f0f0"/>
-  <rect x="300" y="220" width="180" height="18" rx="9" fill="#b8b8b8"/>
-  <rect x="300" y="252" width="130" height="14" rx="7" fill="#c5c5c5"/>
-  <text x="600" y="655" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4d4d4d">REALTY MATE</text>
+  <style>
+    @keyframes rm-float {
+      0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)}
+    }
+    @keyframes rm-bounce {
+      0%,100%{transform:translateY(0)} 40%{transform:translateY(-10px)} 60%{transform:translateY(-5px)}
+    }
+    @keyframes rm-wave {
+      0%{transform:scale(1);opacity:.6} 100%{transform:scale(2.2);opacity:0}
+    }
+    @keyframes rm-pulse {
+      0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)}
+    }
+    .rm-house{animation:rm-float 3.5s ease-in-out infinite;transform-origin:400px 310px}
+    .rm-pin{animation:rm-bounce 2.5s ease-in-out infinite;transform-origin:400px 185px}
+    .rm-w1{animation:rm-wave 3s ease-out infinite}
+    .rm-w2{animation:rm-wave 3s ease-out .8s infinite}
+    .rm-w3{animation:rm-wave 3s ease-out 1.6s infinite}
+    .rm-sp{animation:rm-pulse 2s ease-in-out infinite}
+  </style>
+  <rect width="800" height="500" fill="url(#rm-bg)"/>
+  <circle cx="95" cy="85" r="72" fill="rgba(108,92,231,.06)"/>
+  <circle cx="705" cy="415" r="88" fill="rgba(0,206,201,.07)"/>
+  <circle cx="680" cy="70" r="48" fill="rgba(253,121,168,.05)"/>
+
+  <!-- Search waves (expand outward from house) -->
+  <circle class="rm-w1" cx="400" cy="295" r="90" fill="none" stroke="#fdcb6e" stroke-width="3" opacity=".6"/>
+  <circle class="rm-w2" cx="400" cy="295" r="90" fill="none" stroke="#fdcb6e" stroke-width="2.5" opacity=".6"/>
+  <circle class="rm-w3" cx="400" cy="295" r="90" fill="none" stroke="#fdcb6e" stroke-width="2" opacity=".6"/>
+
+  <!-- House group (float) -->
+  <g class="rm-house">
+    <!-- Roof -->
+    <polygon points="280,265 400,170 520,265" fill="url(#rm-roof)"/>
+    <!-- Chimney -->
+    <rect x="450" y="185" width="22" height="45" rx="4" fill="#a29bfe"/>
+    <!-- Wall -->
+    <rect x="300" y="265" width="200" height="130" rx="6" fill="url(#rm-house)"/>
+    <!-- Door -->
+    <rect x="372" y="320" width="56" height="75" rx="6" fill="rgba(255,255,255,.25)"/>
+    <!-- Windows -->
+    <rect x="318" y="285" width="48" height="44" rx="6" fill="rgba(255,255,255,.3)"/>
+    <rect x="434" y="285" width="48" height="44" rx="6" fill="rgba(255,255,255,.3)"/>
+    <!-- Window cross -->
+    <line x1="342" y1="285" x2="342" y2="329" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+    <line x1="318" y1="307" x2="366" y2="307" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+    <line x1="458" y1="285" x2="458" y2="329" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+    <line x1="434" y1="307" x2="482" y2="307" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+  </g>
+
+  <!-- Map pin (bounce) -->
+  <g class="rm-pin">
+    <circle cx="400" cy="185" r="26" fill="#fd79a8"/>
+    <circle cx="400" cy="185" r="12" fill="white" opacity=".9"/>
+    <ellipse cx="400" cy="218" rx="12" ry="5" fill="rgba(108,92,231,.25)"/>
+  </g>
+
+  <!-- Sparkles -->
+  <circle class="rm-sp" cx="218" cy="198" r="5" fill="#fdcb6e"/>
+  <circle class="rm-sp" cx="582" cy="175" r="4" fill="#fd79a8" style="animation-delay:.5s"/>
+  <circle class="rm-sp" cx="200" cy="368" r="4" fill="#6c5ce7" style="animation-delay:1s"/>
+  <circle class="rm-sp" cx="595" cy="375" r="5" fill="#00cec9" style="animation-delay:1.5s"/>
+
+  <!-- Dots -->
+  <circle cx="152" cy="258" r="3.5" fill="#6c5ce7" opacity=".35"/>
+  <circle cx="642" cy="200" r="3" fill="#fd79a8" opacity=".35"/>
 </svg>

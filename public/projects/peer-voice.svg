@@ -1,25 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">Peer Voice</title>
-  <desc id="desc">Illustrazione piattaforma community e ascolto</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="pv-title pv-desc">
+  <title id="pv-title">Peer Voice</title>
+  <desc id="pv-desc">Community gender equality platform with speech bubbles</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f3f3f3"/>
-      <stop offset="100%" stop-color="#dddddd"/>
+    <linearGradient id="pv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafe"/>
+      <stop offset="50%" stop-color="#f0eeff"/>
+      <stop offset="100%" stop-color="#fce4ec"/>
+    </linearGradient>
+    <linearGradient id="pv-b1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#a29bfe"/>
+    </linearGradient>
+    <linearGradient id="pv-b2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a29bfe"/>
+      <stop offset="100%" stop-color="#fd79a8"/>
+    </linearGradient>
+    <linearGradient id="pv-b3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fd79a8"/>
+      <stop offset="100%" stop-color="#e84393"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <circle cx="180" cy="600" r="150" fill="#ffffff" opacity="0.55"/>
-  <circle cx="1010" cy="140" r="125" fill="#ffffff" opacity="0.5"/>
-  <rect x="285" y="190" width="380" height="220" rx="28" fill="#ffffff" stroke="#c6c6c6" stroke-width="6"/>
-  <polygon points="430,410 510,410 460,475" fill="#ffffff" stroke="#c6c6c6" stroke-width="6"/>
-  <rect x="535" y="275" width="380" height="220" rx="28" fill="#efefef" stroke="#bababa" stroke-width="6"/>
-  <polygon points="690,495 770,495 730,548" fill="#efefef" stroke="#bababa" stroke-width="6"/>
-  <circle cx="600" cy="355" r="62" fill="#5e5e5e"/>
-  <rect x="570" y="405" width="60" height="95" rx="28" fill="#5e5e5e"/>
-  <rect x="540" y="500" width="120" height="26" rx="12" fill="#5e5e5e"/>
-  <path d="M483 324c-35 35-35 91 0 126" fill="none" stroke="#737373" stroke-width="16" stroke-linecap="round"/>
-  <path d="M717 324c35 35 35 91 0 126" fill="none" stroke="#737373" stroke-width="16" stroke-linecap="round"/>
-  <path d="M445 288c-55 56-55 148 0 204" fill="none" stroke="#9a9a9a" stroke-width="12" stroke-linecap="round"/>
-  <path d="M755 288c55 56 55 148 0 204" fill="none" stroke="#9a9a9a" stroke-width="12" stroke-linecap="round"/>
-  <text x="600" y="628" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#4f4f4f">PEER VOICE</text>
+  <style>
+    @keyframes pv-fade1 {
+      0%{opacity:0;transform:translateY(10px)} 20%{opacity:1;transform:translateY(0)} 100%{opacity:1;transform:translateY(0)}
+    }
+    @keyframes pv-fade2 {
+      0%,20%{opacity:0;transform:translateY(10px)} 40%{opacity:1;transform:translateY(0)} 100%{opacity:1;transform:translateY(0)}
+    }
+    @keyframes pv-fade3 {
+      0%,40%{opacity:0;transform:translateY(10px)} 60%{opacity:1;transform:translateY(0)} 100%{opacity:1;transform:translateY(0)}
+    }
+    @keyframes pv-heart {
+      0%,100%{transform:scale(1)} 50%{transform:scale(1.18)}
+    }
+    @keyframes pv-spark {
+      0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.4)}
+    }
+    .pv-b1{animation:pv-fade1 3s ease both infinite}
+    .pv-b2{animation:pv-fade2 3s ease both infinite}
+    .pv-b3{animation:pv-fade3 3s ease both infinite}
+    .pv-h1{animation:pv-heart 2s ease-in-out infinite;transform-origin:312px 228px}
+    .pv-h2{animation:pv-heart 2s ease-in-out .6s infinite;transform-origin:490px 265px}
+    .pv-h3{animation:pv-heart 2s ease-in-out 1.2s infinite;transform-origin:380px 340px}
+    .pv-sp{animation:pv-spark 1.8s ease-in-out infinite}
+  </style>
+  <rect width="800" height="500" fill="url(#pv-bg)"/>
+  <circle cx="100" cy="80" r="75" fill="rgba(108,92,231,.06)"/>
+  <circle cx="700" cy="420" r="90" fill="rgba(253,121,168,.07)"/>
+  <circle cx="680" cy="60" r="45" fill="rgba(0,206,201,.05)"/>
+
+  <!-- Bubble 1 (back-left) -->
+  <g class="pv-b1">
+    <rect x="200" y="180" width="200" height="110" rx="18" fill="url(#pv-b1)" opacity=".88"/>
+    <polygon points="210,290 230,290 215,315" fill="url(#pv-b1)" opacity=".88"/>
+    <text x="300" y="242" text-anchor="middle" font-size="32" fill="white">=</text>
+  </g>
+
+  <!-- Bubble 2 (back-right) -->
+  <g class="pv-b2">
+    <rect x="400" y="155" width="210" height="110" rx="18" fill="url(#pv-b2)" opacity=".88"/>
+    <polygon points="590,265 610,265 595,290" fill="url(#pv-b2)" opacity=".88"/>
+    <text x="505" y="218" text-anchor="middle" font-size="30" fill="white">♀</text>
+  </g>
+
+  <!-- Bubble 3 (front-center) -->
+  <g class="pv-b3">
+    <rect x="288" y="280" width="225" height="110" rx="18" fill="url(#pv-b3)" opacity=".9"/>
+    <polygon points="320,390 345,390 330,415" fill="url(#pv-b3)" opacity=".9"/>
+    <text x="400" y="343" text-anchor="middle" font-size="30" fill="white">♂ ♀</text>
+  </g>
+
+  <!-- Hearts -->
+  <text class="pv-h1" x="298" y="242" font-size="22" fill="#00cec9">♥</text>
+  <text class="pv-h2" x="476" y="279" font-size="18" fill="#00cec9">♥</text>
+  <text class="pv-h3" x="366" y="354" font-size="16" fill="#fdcb6e">♥</text>
+
+  <!-- Sparkles -->
+  <circle class="pv-sp" cx="195" cy="165" r="5" fill="#fdcb6e"/>
+  <circle class="pv-sp" cx="615" cy="148" r="4" fill="#fdcb6e" style="animation-delay:.4s"/>
+  <circle class="pv-sp" cx="175" cy="340" r="3.5" fill="#6c5ce7" style="animation-delay:.8s"/>
+  <circle class="pv-sp" cx="628" cy="310" r="4" fill="#fd79a8" style="animation-delay:1.2s"/>
+
+  <!-- Dots -->
+  <circle cx="155" cy="255" r="3" fill="#6c5ce7" opacity=".35"/>
+  <circle cx="644" cy="200" r="3.5" fill="#fd79a8" opacity=".35"/>
+  <circle cx="145" cy="400" r="3" fill="#00cec9" opacity=".4"/>
+  <circle cx="650" cy="380" r="3" fill="#fdcb6e" opacity=".4"/>
 </svg>
