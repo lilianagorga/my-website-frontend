@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="dev-title dev-desc">
   <title id="dev-title">Developer Avatar</title>
-  <desc id="dev-desc">Illustrazione cartoon di una software developer donna con occhiali rotondi e laptop aperto</desc>
+  <desc id="dev-desc">Illustrazione cartoon di una software developer donna con capelli lunghi mossi, occhiali quadrati dorati e laptop aperto</desc>
 
   <style>
     @keyframes dev-blink {
@@ -37,6 +37,18 @@
     }
   </style>
 
+  <defs>
+    <linearGradient id="dev-hair-gradient" x1="150" y1="104" x2="250" y2="306" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9C744B"/>
+      <stop offset="55%" stop-color="#7D5B3B"/>
+      <stop offset="100%" stop-color="#604529"/>
+    </linearGradient>
+    <linearGradient id="dev-lip-gradient" x1="183" y1="229" x2="217" y2="245" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D88A84"/>
+      <stop offset="100%" stop-color="#C77471"/>
+    </linearGradient>
+  </defs>
+
   <!-- Bolle decorative sfondo -->
   <circle class="dev-bubble-1" cx="40" cy="80" r="28" fill="#B5A642" opacity="0.13"/>
   <circle class="dev-bubble-2" cx="360" cy="60" r="18" fill="#D4C85A" opacity="0.18"/>
@@ -50,65 +62,54 @@
   <!-- Colletto/maglietta -->
   <ellipse cx="200" cy="260" rx="36" ry="20" fill="#3A3A3A"/>
 
-  <!-- Collo -->
-  <rect x="185" y="220" width="30" height="30" rx="8" fill="#F5CBA7"/>
 
-  <!-- Testa -->
-  <ellipse cx="200" cy="190" rx="68" ry="72" fill="#F5CBA7"/>
+  <!-- Capelli lunghi mossi (dietro) -->
+  <path class="dev-hair" d="M134 158 C139 128 165 104 200 104 C235 104 261 128 266 158 C272 196 268 244 246 274 C232 293 216 304 200 306 C184 304 168 293 154 274 C132 244 128 196 134 158 Z" fill="url(#dev-hair-gradient)"/>
 
-  <!-- Capelli (dietro) -->
-  <ellipse class="dev-hair" cx="200" cy="158" rx="68" ry="50" fill="#2C1810"/>
-  <!-- Capelli laterali sinistro -->
-  <ellipse class="dev-hair" cx="143" cy="195" rx="22" ry="45" fill="#2C1810"/>
-  <!-- Capelli laterali destro -->
-  <ellipse class="dev-hair" cx="257" cy="195" rx="22" ry="45" fill="#2C1810"/>
-  <!-- Capelli onde sulla fronte -->
-  <path class="dev-hair" d="M140 158 Q155 138 170 152 Q185 138 200 150 Q215 136 230 150 Q245 138 260 158" fill="none" stroke="#2C1810" stroke-width="14" stroke-linecap="round"/>
-  <!-- Capelli sopra -->
-  <ellipse class="dev-hair" cx="200" cy="145" rx="60" ry="30" fill="#2C1810"/>
+  <!-- Viso femminile con zigomi più alti -->
+  <path d="M200 116 C223 116 241 132 248 157 C254 177 252 207 245 227 C237 244 223 255 200 260 C177 255 163 244 155 227 C148 207 146 177 152 157 C159 132 177 116 200 116 Z" fill="#F7CFAD"/>
+  <!-- Collo umano: forma naturale con leggere linee anatomiche -->
+  <path d="M186 247 C190 243 195 241 200 241 C205 241 210 243 214 247 C217 252 219 259 219 268 C215 274 208 278 200 278 C192 278 185 274 181 268 C181 259 183 252 186 247 Z" fill="#F7CFAD"/>
+  <path d="M190 253 C188 260 188 267 190 273" fill="none" stroke="#E5B997" stroke-width="1.8" opacity="0.32" stroke-linecap="round"/>
+  <path d="M210 253 C212 260 212 267 210 273" fill="none" stroke="#E5B997" stroke-width="1.8" opacity="0.32" stroke-linecap="round"/>
 
-  <!-- Orecchie -->
-  <ellipse cx="133" cy="196" rx="10" ry="13" fill="#F0BF9A"/>
-  <ellipse cx="267" cy="196" rx="10" ry="13" fill="#F0BF9A"/>
-
-  <!-- Occhi (bianchi) -->
-  <ellipse cx="175" cy="192" rx="16" ry="14" fill="white"/>
-  <ellipse cx="225" cy="192" rx="16" ry="14" fill="white"/>
-  <!-- Iride -->
-  <circle cx="175" cy="193" r="8" fill="#4A3728"/>
-  <circle cx="225" cy="193" r="8" fill="#4A3728"/>
-  <!-- Pupille -->
-  <circle cx="176" cy="193" r="4" fill="#1A1A1A"/>
-  <circle cx="226" cy="193" r="4" fill="#1A1A1A"/>
-  <!-- Riflesso occhi -->
-  <circle cx="179" cy="190" r="2" fill="white" opacity="0.8"/>
-  <circle cx="229" cy="190" r="2" fill="white" opacity="0.8"/>
-
-  <!-- Occhiali — montatura sinistra -->
-  <circle cx="175" cy="192" r="19" fill="none" stroke="#B5A642" stroke-width="3"/>
-  <!-- Occhiali — montatura destra -->
-  <circle cx="225" cy="192" r="19" fill="none" stroke="#B5A642" stroke-width="3"/>
-  <!-- Ponte occhiali -->
-  <path d="M194 192 Q200 188 206 192" fill="none" stroke="#B5A642" stroke-width="3" stroke-linecap="round"/>
-  <!-- Stanghette occhiali -->
-  <line x1="156" y1="190" x2="142" y2="190" stroke="#B5A642" stroke-width="3" stroke-linecap="round"/>
-  <line x1="244" y1="190" x2="258" y2="190" stroke="#B5A642" stroke-width="3" stroke-linecap="round"/>
-  <!-- Riflesso lenti -->
-  <path d="M163 183 Q167 180 171 183" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <path d="M213 183 Q217 180 221 183" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <!-- Copertura alta fronte: elimina il rosa residuo superiore -->
+  <ellipse class="dev-hair" cx="200" cy="138" rx="56" ry="20" fill="url(#dev-hair-gradient)"/>
+  <ellipse class="dev-hair" cx="200" cy="118.5" rx="18" ry="4.5" fill="url(#dev-hair-gradient)"/>
 
   <!-- Sopracciglia -->
-  <path d="M161 176 Q175 171 188 176" fill="none" stroke="#2C1810" stroke-width="3" stroke-linecap="round"/>
-  <path d="M212 176 Q225 171 239 176" fill="none" stroke="#2C1810" stroke-width="3" stroke-linecap="round"/>
+  <path d="M162 174 Q175 168 188 173" fill="none" stroke="#6A4A31" stroke-width="3" stroke-linecap="round"/>
+  <path d="M212 173 Q225 168 238 174" fill="none" stroke="#6A4A31" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Occhi -->
+  <ellipse cx="175" cy="191" rx="12" ry="9" fill="white"/>
+  <ellipse cx="225" cy="191" rx="12" ry="9" fill="white"/>
+  <circle cx="175" cy="192" r="6" fill="#4A3728"/>
+  <circle cx="225" cy="192" r="6" fill="#4A3728"/>
+  <circle cx="175" cy="192" r="3.3" fill="#171717"/>
+  <circle cx="225" cy="192" r="3.3" fill="#171717"/>
+  <circle cx="178" cy="189" r="1.8" fill="white" opacity="0.85"/>
+  <circle cx="228" cy="189" r="1.8" fill="white" opacity="0.85"/>
+
+  <!-- Occhiali quadrati dorati -->
+  <rect x="156" y="175" width="38" height="31" rx="8" fill="none" stroke="#C8A24D" stroke-width="3"/>
+  <rect x="206" y="175" width="38" height="31" rx="8" fill="none" stroke="#C8A24D" stroke-width="3"/>
+  <path d="M194 190 L206 190" fill="none" stroke="#C8A24D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="156" y1="189" x2="144" y2="188" stroke="#C8A24D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="244" y1="189" x2="256" y2="188" stroke="#C8A24D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M163 182 Q169 178 175 182" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+  <path d="M213 182 Q219 178 225 182" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
 
   <!-- Naso -->
-  <path d="M200 200 Q196 212 200 216 Q204 212 200 200" fill="none" stroke="#E0A882" stroke-width="2" stroke-linecap="round"/>
+  <path d="M200 201 Q196 212 200 217 Q204 212 200 201" fill="none" stroke="#DFAB85" stroke-width="2" stroke-linecap="round"/>
 
-  <!-- Sorriso -->
-  <path d="M183 228 Q200 242 217 228" fill="none" stroke="#C0805A" stroke-width="3" stroke-linecap="round"/>
-  <!-- Guance rosa -->
-  <ellipse cx="162" cy="222" rx="14" ry="8" fill="#FFB3B3" opacity="0.35"/>
-  <ellipse cx="238" cy="222" rx="14" ry="8" fill="#FFB3B3" opacity="0.35"/>
+  <!-- Labbra femminili -->
+  <path d="M184 231 C190 225 196 223 200 225 C204 223 210 225 216 231 C210 239 205 242 200 242 C195 242 190 239 184 231 Z" fill="#C77471"/>
+  <path d="M188 232 Q200 236 212 232" fill="none" stroke="#B96967" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- Guance -->
+  <ellipse cx="166" cy="217" rx="13" ry="7" fill="#F5A7AE" opacity="0.30"/>
+  <ellipse cx="234" cy="217" rx="13" ry="7" fill="#F5A7AE" opacity="0.30"/>
 
   <!-- Braccia -->
   <ellipse cx="135" cy="300" rx="18" ry="42" fill="#4A4A4A" transform="rotate(-10 135 300)"/>
