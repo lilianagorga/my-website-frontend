@@ -13,6 +13,7 @@ export class AuthService {
   private readonly http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}/auth`;
   private tokenKey = 'auth_token';
+  private tokenFingerprintKey = 'auth_token_fp';
 
   login(email: string, password: string): Observable<AuthResponse> {
     const body: LoginRequest = { email, password };
@@ -20,9 +21,10 @@ export class AuthService {
       tap(response => {
         if (response.token) {
           localStorage.setItem(this.tokenKey, response.token);
+          localStorage.setItem(this.tokenFingerprintKey, this.fingerprint(response.token));
           return;
         }
-        localStorage.removeItem(this.tokenKey);
+        this.clearTokenData();
       })
     );
   }
@@ -32,34 +34,32 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem(this.tokenKey);
+    this.clearTokenData();
   }
 
   isLoggedIn(): boolean {
-    if (!this.getToken()) {
+    const token = this.getToken();
+    if (!token) {
+      return false;
+    }
+
+    if (!this.isTokenIntact(token)) {
+      this.clearTokenData();
       return false;
     }
 
     const payload = this.getTokenPayload();
     if (!payload) {
-      this.logout();
+      this.clearTokenData();
       return false;
     }
 
     if (this.isTokenExpired(payload)) {
-      this.logout();
+      this.clearTokenData();
       return false;
     }
 
     return true;
-  }
-
-  private isTokenExpired(payload: Record<string, unknown>): boolean {
-    const exp = payload['exp'];
-    if (typeof exp !== 'number') {
-      return false;
-    }
-    return exp * 1000 < Date.now();
   }
 
   getToken(): string | null {
@@ -68,6 +68,31 @@ export class AuthService {
 
   isAdmin(): boolean {
     return this.getUserRoles().includes('ADMIN');
+  }
+
+  private isTokenIntact(token: string): boolean {
+    const storedFp = localStorage.getItem(this.tokenFingerprintKey);
+    if (!storedFp) {
+      return true;
+    }
+    return this.fingerprint(token) === storedFp;
+  }
+
+  private fingerprint(value: string): string {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < value.length; i++) {
+      h ^= value.charCodeAt(i);
+      h = Math.imul(h, 0x01000193);
+    }
+    return (h >>> 0).toString(36);
+  }
+
+  private isTokenExpired(payload: Record<string, unknown>): boolean {
+    const exp = payload['exp'];
+    if (typeof exp !== 'number') {
+      return false;
+    }
+    return exp * 1000 < Date.now();
   }
 
   private getUserRoles(): string[] {
@@ -110,5 +135,10 @@ export class AuthService {
     } catch {
       return null;
     }
+  }
+
+  private clearTokenData(): void {
+    localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.tokenFingerprintKey);
   }
 }
