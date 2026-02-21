@@ -4,20 +4,20 @@
   <defs>
     <linearGradient id="pv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fafafe"/>
-      <stop offset="50%" stop-color="#f0eeff"/>
-      <stop offset="100%" stop-color="#fce4ec"/>
+      <stop offset="50%" stop-color="#edf2f7"/>
+      <stop offset="100%" stop-color="#e8f1f5"/>
     </linearGradient>
     <linearGradient id="pv-b1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6c5ce7"/>
-      <stop offset="100%" stop-color="#a29bfe"/>
+      <stop offset="0%" stop-color="#588BAE"/>
+      <stop offset="100%" stop-color="#7BA7C4"/>
     </linearGradient>
     <linearGradient id="pv-b2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a29bfe"/>
-      <stop offset="100%" stop-color="#fd79a8"/>
+      <stop offset="0%" stop-color="#7BA7C4"/>
+      <stop offset="100%" stop-color="#4F97A3"/>
     </linearGradient>
     <linearGradient id="pv-b3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fd79a8"/>
-      <stop offset="100%" stop-color="#e84393"/>
+      <stop offset="0%" stop-color="#4F97A3"/>
+      <stop offset="100%" stop-color="#3D8490"/>
     </linearGradient>
   </defs>
   <style>
@@ -45,9 +45,9 @@
     .pv-sp{animation:pv-spark 1.8s ease-in-out infinite}
   </style>
   <rect width="800" height="500" fill="url(#pv-bg)"/>
-  <circle cx="100" cy="80" r="75" fill="rgba(108,92,231,.06)"/>
-  <circle cx="700" cy="420" r="90" fill="rgba(253,121,168,.07)"/>
-  <circle cx="680" cy="60" r="45" fill="rgba(0,206,201,.05)"/>
+  <circle cx="100" cy="80" r="75" fill="rgba(88,139,174,.06)"/>
+  <circle cx="700" cy="420" r="90" fill="rgba(79,151,163,.07)"/>
+  <circle cx="680" cy="60" r="45" fill="rgba(114,133,165,.05)"/>
 
   <!-- Bubble 1 (back-left) -->
   <g class="pv-b1">
@@ -71,19 +71,19 @@
   </g>
 
   <!-- Hearts -->
-  <text class="pv-h1" x="298" y="242" font-size="22" fill="#00cec9">♥</text>
-  <text class="pv-h2" x="476" y="279" font-size="18" fill="#00cec9">♥</text>
+  <text class="pv-h1" x="298" y="242" font-size="22" fill="#7285A5">♥</text>
+  <text class="pv-h2" x="476" y="279" font-size="18" fill="#7285A5">♥</text>
   <text class="pv-h3" x="366" y="354" font-size="16" fill="#fdcb6e">♥</text>
 
   <!-- Sparkles -->
   <circle class="pv-sp" cx="195" cy="165" r="5" fill="#fdcb6e"/>
   <circle class="pv-sp" cx="615" cy="148" r="4" fill="#fdcb6e" style="animation-delay:.4s"/>
-  <circle class="pv-sp" cx="175" cy="340" r="3.5" fill="#6c5ce7" style="animation-delay:.8s"/>
-  <circle class="pv-sp" cx="628" cy="310" r="4" fill="#fd79a8" style="animation-delay:1.2s"/>
+  <circle class="pv-sp" cx="175" cy="340" r="3.5" fill="#588BAE" style="animation-delay:.8s"/>
+  <circle class="pv-sp" cx="628" cy="310" r="4" fill="#4F97A3" style="animation-delay:1.2s"/>
 
   <!-- Dots -->
-  <circle cx="155" cy="255" r="3" fill="#6c5ce7" opacity=".35"/>
-  <circle cx="644" cy="200" r="3.5" fill="#fd79a8" opacity=".35"/>
-  <circle cx="145" cy="400" r="3" fill="#00cec9" opacity=".4"/>
+  <circle cx="155" cy="255" r="3" fill="#588BAE" opacity=".35"/>
+  <circle cx="644" cy="200" r="3.5" fill="#4F97A3" opacity=".35"/>
+  <circle cx="145" cy="400" r="3" fill="#7285A5" opacity=".4"/>
   <circle cx="650" cy="380" r="3" fill="#fdcb6e" opacity=".4"/>
 </svg>

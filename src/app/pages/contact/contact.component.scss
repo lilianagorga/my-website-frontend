@@ -5,6 +5,35 @@
 .contact-page {
   padding: 4rem 0;
   min-height: calc(100vh - 64px);
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(212, 200, 90, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 7s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(181, 166, 66, 0.10) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 7s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
 }
 
 .page-container {
@@ -31,7 +60,31 @@
   color: #666;
   font-size: 1.1rem;
   margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   margin-bottom: 3rem;
+}
+
+.contact-header-text {
+  flex: 1;
+}
+
+.contact-illustration {
+  flex: 0 0 220px;
+  animation: fadeInScale 0.6s ease 0.2s both;
+}
+
+.mail-illustration {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(181, 166, 66, 0.25));
+  animation: float 5s ease-in-out infinite;
 }
 
 .contact-form {
@@ -44,6 +97,9 @@
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
   transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease 0.3s both;
 
   &:hover,
   &:focus-within {
@@ -81,7 +137,10 @@
 
     &:focus {
       border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px var(--color-focus-ring);
+      box-shadow: 0 0 0 3px var(--color-focus-ring),
+                  0 4px 12px rgba(181, 166, 66, 0.08);
+      transform: translateY(-1px);
+      transition: all var(--transition);
     }
   }
 
@@ -151,5 +210,15 @@
 
   .contact-form {
     padding: 1.5rem;
+  }
+
+  .contact-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-illustration {
+    flex: none;
+    max-width: 180px;
   }
 }

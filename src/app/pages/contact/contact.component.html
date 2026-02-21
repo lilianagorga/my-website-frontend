@@ -1,7 +1,14 @@
 <section class="contact-page">
   <div class="page-container">
-    <h1 class="page-title">Contattami</h1>
-    <p class="page-subtitle">Hai una domanda o vuoi collaborare? Scrivimi un messaggio.</p>
+    <div class="contact-header">
+      <div class="contact-header-text">
+        <h1 class="page-title">Contattami</h1>
+        <p class="page-subtitle">Hai una domanda o vuoi collaborare? Scrivimi un messaggio.</p>
+      </div>
+      <div class="contact-illustration">
+        <img src="illustrations/contact-mail.svg" alt="Illustrazione messaggio" class="mail-illustration" width="300" height="250" loading="lazy" />
+      </div>
+    </div>
 
     <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">

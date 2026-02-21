@@ -5,15 +5,15 @@
     <linearGradient id="rm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fafafe"/>
       <stop offset="50%" stop-color="#e8f8f8"/>
-      <stop offset="100%" stop-color="#f0eeff"/>
+      <stop offset="100%" stop-color="#edf2f7"/>
     </linearGradient>
     <linearGradient id="rm-house" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6c5ce7"/>
-      <stop offset="100%" stop-color="#00cec9"/>
+      <stop offset="0%" stop-color="#588BAE"/>
+      <stop offset="100%" stop-color="#7285A5"/>
     </linearGradient>
     <linearGradient id="rm-roof" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a29bfe"/>
-      <stop offset="100%" stop-color="#6c5ce7"/>
+      <stop offset="0%" stop-color="#7BA7C4"/>
+      <stop offset="100%" stop-color="#588BAE"/>
     </linearGradient>
   </defs>
   <style>
@@ -37,9 +37,9 @@
     .rm-sp{animation:rm-pulse 2s ease-in-out infinite}
   </style>
   <rect width="800" height="500" fill="url(#rm-bg)"/>
-  <circle cx="95" cy="85" r="72" fill="rgba(108,92,231,.06)"/>
-  <circle cx="705" cy="415" r="88" fill="rgba(0,206,201,.07)"/>
-  <circle cx="680" cy="70" r="48" fill="rgba(253,121,168,.05)"/>
+  <circle cx="95" cy="85" r="72" fill="rgba(88,139,174,.06)"/>
+  <circle cx="705" cy="415" r="88" fill="rgba(114,133,165,.07)"/>
+  <circle cx="680" cy="70" r="48" fill="rgba(79,151,163,.05)"/>
 
   <!-- Search waves (expand outward from house) -->
   <circle class="rm-w1" cx="400" cy="295" r="90" fill="none" stroke="#fdcb6e" stroke-width="3" opacity=".6"/>
@@ -51,7 +51,7 @@
     <!-- Roof -->
     <polygon points="280,265 400,170 520,265" fill="url(#rm-roof)"/>
     <!-- Chimney -->
-    <rect x="450" y="185" width="22" height="45" rx="4" fill="#a29bfe"/>
+    <rect x="450" y="185" width="22" height="45" rx="4" fill="#7BA7C4"/>
     <!-- Wall -->
     <rect x="300" y="265" width="200" height="130" rx="6" fill="url(#rm-house)"/>
     <!-- Door -->
@@ -68,18 +68,18 @@
 
   <!-- Map pin (bounce) -->
   <g class="rm-pin">
-    <circle cx="400" cy="185" r="26" fill="#fd79a8"/>
+    <circle cx="400" cy="185" r="26" fill="#4F97A3"/>
     <circle cx="400" cy="185" r="12" fill="white" opacity=".9"/>
-    <ellipse cx="400" cy="218" rx="12" ry="5" fill="rgba(108,92,231,.25)"/>
+    <ellipse cx="400" cy="218" rx="12" ry="5" fill="rgba(88,139,174,.25)"/>
   </g>
 
   <!-- Sparkles -->
   <circle class="rm-sp" cx="218" cy="198" r="5" fill="#fdcb6e"/>
-  <circle class="rm-sp" cx="582" cy="175" r="4" fill="#fd79a8" style="animation-delay:.5s"/>
-  <circle class="rm-sp" cx="200" cy="368" r="4" fill="#6c5ce7" style="animation-delay:1s"/>
-  <circle class="rm-sp" cx="595" cy="375" r="5" fill="#00cec9" style="animation-delay:1.5s"/>
+  <circle class="rm-sp" cx="582" cy="175" r="4" fill="#4F97A3" style="animation-delay:.5s"/>
+  <circle class="rm-sp" cx="200" cy="368" r="4" fill="#588BAE" style="animation-delay:1s"/>
+  <circle class="rm-sp" cx="595" cy="375" r="5" fill="#7285A5" style="animation-delay:1.5s"/>
 
   <!-- Dots -->
-  <circle cx="152" cy="258" r="3.5" fill="#6c5ce7" opacity=".35"/>
-  <circle cx="642" cy="200" r="3" fill="#fd79a8" opacity=".35"/>
+  <circle cx="152" cy="258" r="3.5" fill="#588BAE" opacity=".35"/>
+  <circle cx="642" cy="200" r="3" fill="#4F97A3" opacity=".35"/>
 </svg>

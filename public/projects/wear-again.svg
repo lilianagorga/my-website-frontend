@@ -4,16 +4,16 @@
   <defs>
     <linearGradient id="wa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fafafe"/>
-      <stop offset="50%" stop-color="#f0eeff"/>
-      <stop offset="100%" stop-color="#fce4ec"/>
+      <stop offset="50%" stop-color="#edf2f7"/>
+      <stop offset="100%" stop-color="#e8f1f5"/>
     </linearGradient>
     <linearGradient id="wa-dress" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fd79a8"/>
-      <stop offset="100%" stop-color="#6c5ce7"/>
+      <stop offset="0%" stop-color="#4F97A3"/>
+      <stop offset="100%" stop-color="#588BAE"/>
     </linearGradient>
     <linearGradient id="wa-hang" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a29bfe"/>
-      <stop offset="100%" stop-color="#6c5ce7"/>
+      <stop offset="0%" stop-color="#7BA7C4"/>
+      <stop offset="100%" stop-color="#588BAE"/>
     </linearGradient>
   </defs>
   <style>
@@ -34,15 +34,15 @@
     .wa-s4{animation:wa-pulse 2s ease-in-out 1.5s infinite}
   </style>
   <rect width="800" height="500" fill="url(#wa-bg)"/>
-  <circle cx="90" cy="90" r="80" fill="rgba(108,92,231,.06)"/>
-  <circle cx="710" cy="410" r="100" fill="rgba(253,121,168,.07)"/>
-  <circle cx="680" cy="70" r="50" fill="rgba(0,206,201,.06)"/>
+  <circle cx="90" cy="90" r="80" fill="rgba(88,139,174,.06)"/>
+  <circle cx="710" cy="410" r="100" fill="rgba(79,151,163,.07)"/>
+  <circle cx="680" cy="70" r="50" fill="rgba(114,133,165,.06)"/>
 
   <!-- Recycling arrows (rotate) -->
   <g class="wa-arrows">
-    <path d="M400 175 L422 148 L416 162 A72 72 0 0 1 460 248 L444 243 A54 54 0 0 0 406 169 Z" fill="#00cec9"/>
-    <path d="M460 248 L490 255 L476 249 A72 72 0 0 1 355 320 L360 304 A54 54 0 0 0 462 262 Z" fill="#00cec9"/>
-    <path d="M355 320 L333 344 L345 329 A72 72 0 0 1 338 160 L348 174 A54 54 0 0 0 344 312 Z" fill="#00cec9"/>
+    <path d="M400 175 L422 148 L416 162 A72 72 0 0 1 460 248 L444 243 A54 54 0 0 0 406 169 Z" fill="#7285A5"/>
+    <path d="M460 248 L490 255 L476 249 A72 72 0 0 1 355 320 L360 304 A54 54 0 0 0 462 262 Z" fill="#7285A5"/>
+    <path d="M355 320 L333 344 L345 329 A72 72 0 0 1 338 160 L348 174 A54 54 0 0 0 344 312 Z" fill="#7285A5"/>
   </g>
 
   <!-- Garment (float) -->
@@ -58,13 +58,13 @@
 
   <!-- Sparkles -->
   <circle class="wa-s1" cx="225" cy="205" r="6" fill="#fdcb6e"/>
-  <circle class="wa-s2" cx="574" cy="182" r="5" fill="#fd79a8"/>
-  <circle class="wa-s3" cx="195" cy="345" r="4" fill="#6c5ce7"/>
-  <circle class="wa-s4" cx="595" cy="358" r="6" fill="#00cec9"/>
+  <circle class="wa-s2" cx="574" cy="182" r="5" fill="#4F97A3"/>
+  <circle class="wa-s3" cx="195" cy="345" r="4" fill="#588BAE"/>
+  <circle class="wa-s4" cx="595" cy="358" r="6" fill="#7285A5"/>
 
   <!-- Dots -->
-  <circle cx="155" cy="260" r="3.5" fill="#6c5ce7" opacity=".35"/>
-  <circle cx="638" cy="195" r="4" fill="#fd79a8" opacity=".35"/>
-  <circle cx="148" cy="388" r="3" fill="#00cec9" opacity=".45"/>
+  <circle cx="155" cy="260" r="3.5" fill="#588BAE" opacity=".35"/>
+  <circle cx="638" cy="195" r="4" fill="#4F97A3" opacity=".35"/>
+  <circle cx="148" cy="388" r="3" fill="#7285A5" opacity=".45"/>
   <circle cx="645" cy="295" r="4" fill="#fdcb6e" opacity=".45"/>
 </svg>

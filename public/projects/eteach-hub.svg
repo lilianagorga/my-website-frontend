@@ -5,15 +5,15 @@
     <linearGradient id="et-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fafafe"/>
       <stop offset="50%" stop-color="#e8f8f8"/>
-      <stop offset="100%" stop-color="#f0eeff"/>
+      <stop offset="100%" stop-color="#edf2f7"/>
     </linearGradient>
     <linearGradient id="et-book-l" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00cec9"/>
-      <stop offset="100%" stop-color="#00b5b0"/>
+      <stop offset="0%" stop-color="#7285A5"/>
+      <stop offset="100%" stop-color="#5F7293"/>
     </linearGradient>
     <linearGradient id="et-book-r" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6c5ce7"/>
-      <stop offset="100%" stop-color="#a29bfe"/>
+      <stop offset="0%" stop-color="#588BAE"/>
+      <stop offset="100%" stop-color="#7BA7C4"/>
     </linearGradient>
     <radialGradient id="et-glow" cx="50%" cy="50%">
       <stop offset="0%" stop-color="#fdcb6e" stop-opacity=".6"/>
@@ -44,8 +44,8 @@
     .et-sp{animation:et-pulse 2s ease-in-out infinite}
   </style>
   <rect width="800" height="500" fill="url(#et-bg)"/>
-  <circle cx="95" cy="85" r="72" fill="rgba(108,92,231,.06)"/>
-  <circle cx="705" cy="415" r="88" fill="rgba(0,206,201,.07)"/>
+  <circle cx="95" cy="85" r="72" fill="rgba(88,139,174,.06)"/>
+  <circle cx="705" cy="415" r="88" fill="rgba(114,133,165,.07)"/>
 
   <!-- Glow behind bulb -->
   <circle class="et-glow" cx="400" cy="175" r="45" fill="url(#et-glow)"/>
@@ -83,27 +83,27 @@
 
   <!-- Graduation cap left (float) -->
   <g class="et-cap1">
-    <polygon points="228,292 258,278 288,292 258,306" fill="#fd79a8"/>
-    <rect x="252" y="292" width="12" height="22" rx="3" fill="#e84393"/>
-    <circle cx="264" cy="314" r="5" fill="#fd79a8"/>
-    <line x1="288" y1="292" x2="298" y2="310" stroke="#fd79a8" stroke-width="2.5" stroke-linecap="round"/>
+    <polygon points="228,292 258,278 288,292 258,306" fill="#4F97A3"/>
+    <rect x="252" y="292" width="12" height="22" rx="3" fill="#3D8490"/>
+    <circle cx="264" cy="314" r="5" fill="#4F97A3"/>
+    <line x1="288" y1="292" x2="298" y2="310" stroke="#4F97A3" stroke-width="2.5" stroke-linecap="round"/>
   </g>
 
   <!-- Graduation cap right (float) -->
   <g class="et-cap2">
-    <polygon points="512,292 542,278 572,292 542,306" fill="#fd79a8"/>
-    <rect x="536" y="292" width="12" height="22" rx="3" fill="#e84393"/>
-    <circle cx="548" cy="314" r="5" fill="#fd79a8"/>
-    <line x1="572" y1="292" x2="582" y2="310" stroke="#fd79a8" stroke-width="2.5" stroke-linecap="round"/>
+    <polygon points="512,292 542,278 572,292 542,306" fill="#4F97A3"/>
+    <rect x="536" y="292" width="12" height="22" rx="3" fill="#3D8490"/>
+    <circle cx="548" cy="314" r="5" fill="#4F97A3"/>
+    <line x1="572" y1="292" x2="582" y2="310" stroke="#4F97A3" stroke-width="2.5" stroke-linecap="round"/>
   </g>
 
   <!-- Sparkles -->
   <circle class="et-sp" cx="195" cy="195" r="5" fill="#fdcb6e"/>
-  <circle class="et-sp" cx="605" cy="175" r="4" fill="#fd79a8" style="animation-delay:.5s"/>
-  <circle class="et-sp" cx="180" cy="370" r="4" fill="#6c5ce7" style="animation-delay:1s"/>
-  <circle class="et-sp" cx="615" cy="380" r="5" fill="#00cec9" style="animation-delay:1.5s"/>
+  <circle class="et-sp" cx="605" cy="175" r="4" fill="#4F97A3" style="animation-delay:.5s"/>
+  <circle class="et-sp" cx="180" cy="370" r="4" fill="#588BAE" style="animation-delay:1s"/>
+  <circle class="et-sp" cx="615" cy="380" r="5" fill="#7285A5" style="animation-delay:1.5s"/>
 
   <!-- Dots -->
-  <circle cx="150" cy="260" r="3.5" fill="#6c5ce7" opacity=".35"/>
-  <circle cx="645" cy="210" r="3" fill="#fd79a8" opacity=".35"/>
+  <circle cx="150" cy="260" r="3.5" fill="#588BAE" opacity=".35"/>
+  <circle cx="645" cy="210" r="3" fill="#4F97A3" opacity=".35"/>
 </svg>

@@ -1,3 +1,19 @@
+:host {
+  --color-primary: #00843D;
+  --color-primary-hover: #006B31;
+  --color-primary-light: rgba(0, 132, 61, 0.10);
+  --color-primary-light-strong: rgba(0, 132, 61, 0.18);
+  --color-primary-shadow: rgba(0, 132, 61, 0.25);
+  --color-primary-shadow-strong: rgba(0, 132, 61, 0.35);
+  --color-focus-ring: rgba(0, 132, 61, 0.2);
+  --color-accent: #32CD32;
+  --color-accent-hover: #28A828;
+  --color-accent-light: rgba(50, 205, 50, 0.12);
+  --gradient-hero: linear-gradient(135deg, #f5faf7 0%, #e8f5e9 30%, #dcedc8 100%);
+  --gradient-card: linear-gradient(135deg, #00843D 0%, #32CD32 100%);
+  --shadow-glow: 0 0 40px rgba(50, 205, 50, 0.15);
+}
+
 .login-page {
   min-height: calc(100vh - 64px);
   display: flex;
@@ -25,7 +41,9 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--gradient-card);
+    background: linear-gradient(90deg, #00843D, #32CD32, #00843D);
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
 
@@ -125,7 +143,8 @@ form {
   &:hover:not(:disabled) {
     background-position: 100% center;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px var(--color-primary-shadow-strong), var(--shadow-glow);
+    box-shadow: 0 8px 25px rgba(0, 132, 61, 0.35),
+                0 0 20px rgba(50, 205, 50, 0.2);
   }
 
   &:disabled {

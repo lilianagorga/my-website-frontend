@@ -1,4 +1,19 @@
 :host {
+  --color-primary: #588BAE;
+  --color-primary-hover: #4A7A9B;
+  --color-primary-light: rgba(88, 139, 174, 0.10);
+  --color-primary-light-strong: rgba(88, 139, 174, 0.18);
+  --color-primary-shadow: rgba(88, 139, 174, 0.25);
+  --color-primary-shadow-strong: rgba(88, 139, 174, 0.35);
+  --color-focus-ring: rgba(88, 139, 174, 0.2);
+  --color-accent: #4F97A3;
+  --color-accent-hover: #3D8490;
+  --color-accent-light: rgba(79, 151, 163, 0.12);
+  --color-secondary: #7285A5;
+  --color-secondary-hover: #5F7293;
+  --gradient-card: linear-gradient(135deg, #588BAE 0%, #4F97A3 100%);
+  --shadow-glow: 0 0 40px rgba(88, 139, 174, 0.15);
+
   animation: fadeInUp 0.5s ease both;
 }
 
@@ -79,7 +94,7 @@
     left: 0;
     right: 0;
     height: 200px;
-    background: linear-gradient(to top, rgba(108, 92, 231, 0.15), transparent);
+    background: linear-gradient(to top, rgba(88, 139, 174, 0.15), transparent);
     opacity: 0;
     transition: opacity var(--transition);
     z-index: 1;
@@ -89,7 +104,7 @@
   &:hover {
     transform: translateY(-6px);
     border-color: var(--color-primary-light-strong);
-    box-shadow: var(--shadow-lg), 0 0 30px rgba(108, 92, 231, 0.08);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(88, 139, 174, 0.08);
 
     &::before {
       opacity: 1;
@@ -151,23 +166,23 @@
   transition: transform var(--transition), box-shadow var(--transition);
 
   &:nth-child(4n+1) {
-    background: var(--color-primary-light);
-    color: var(--color-primary);
+    background: rgba(88, 139, 174, 0.10);
+    color: #588BAE;
   }
 
   &:nth-child(4n+2) {
-    background: var(--color-accent-light);
-    color: var(--color-accent-hover);
+    background: rgba(79, 151, 163, 0.12);
+    color: #3D8490;
   }
 
   &:nth-child(4n+3) {
-    background: rgba(0, 206, 201, 0.12);
-    color: var(--color-secondary-hover);
+    background: rgba(114, 133, 165, 0.12);
+    color: #5F7293;
   }
 
   &:nth-child(4n+4) {
-    background: rgba(253, 203, 110, 0.2);
-    color: #e17055;
+    background: rgba(88, 139, 174, 0.08);
+    color: #4A7A9B;
   }
 
   &:hover {

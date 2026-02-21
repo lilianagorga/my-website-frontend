@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="dev-title dev-desc">
+  <title id="dev-title">Developer Avatar</title>
+  <desc id="dev-desc">Illustrazione cartoon di una software developer donna con occhiali rotondi e laptop aperto</desc>
+
+  <style>
+    @keyframes dev-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes dev-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes dev-float-alt {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+    @keyframes dev-wave {
+      0%, 100% { transform: skewX(0deg); }
+      25% { transform: skewX(1deg); }
+      75% { transform: skewX(-1deg); }
+    }
+    .dev-cursor { animation: dev-blink 1s step-end infinite; }
+    .dev-bubble-1 { animation: dev-float 5s ease-in-out infinite; transform-origin: center; }
+    .dev-bubble-2 { animation: dev-float-alt 6s ease-in-out infinite 0.5s; transform-origin: center; }
+    .dev-bubble-3 { animation: dev-float 7s ease-in-out infinite 1s; transform-origin: center; }
+    .dev-hair { animation: dev-wave 4s ease-in-out infinite; transform-origin: 200px 130px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dev-cursor,
+      .dev-bubble-1,
+      .dev-bubble-2,
+      .dev-bubble-3,
+      .dev-hair {
+        animation: none;
+      }
+    }
+  </style>
+
+  <!-- Bolle decorative sfondo -->
+  <circle class="dev-bubble-1" cx="40" cy="80" r="28" fill="#B5A642" opacity="0.13"/>
+  <circle class="dev-bubble-2" cx="360" cy="60" r="18" fill="#D4C85A" opacity="0.18"/>
+  <circle class="dev-bubble-3" cx="370" cy="320" r="24" fill="#B5A642" opacity="0.11"/>
+  <circle class="dev-bubble-1" cx="30" cy="300" r="16" fill="#D4C85A" opacity="0.15"/>
+  <circle class="dev-bubble-2" cx="200" cy="20" r="10" fill="#B5A642" opacity="0.12"/>
+  <circle class="dev-bubble-3" cx="340" cy="180" r="12" fill="#D4C85A" opacity="0.10"/>
+
+  <!-- Corpo / torso -->
+  <ellipse cx="200" cy="295" rx="72" ry="55" fill="#4A4A4A"/>
+  <!-- Colletto/maglietta -->
+  <ellipse cx="200" cy="260" rx="36" ry="20" fill="#3A3A3A"/>
+
+  <!-- Collo -->
+  <rect x="185" y="220" width="30" height="30" rx="8" fill="#F5CBA7"/>
+
+  <!-- Testa -->
+  <ellipse cx="200" cy="190" rx="68" ry="72" fill="#F5CBA7"/>
+
+  <!-- Capelli (dietro) -->
+  <ellipse class="dev-hair" cx="200" cy="158" rx="68" ry="50" fill="#2C1810"/>
+  <!-- Capelli laterali sinistro -->
+  <ellipse class="dev-hair" cx="143" cy="195" rx="22" ry="45" fill="#2C1810"/>
+  <!-- Capelli laterali destro -->
+  <ellipse class="dev-hair" cx="257" cy="195" rx="22" ry="45" fill="#2C1810"/>
+  <!-- Capelli onde sulla fronte -->
+  <path class="dev-hair" d="M140 158 Q155 138 170 152 Q185 138 200 150 Q215 136 230 150 Q245 138 260 158" fill="none" stroke="#2C1810" stroke-width="14" stroke-linecap="round"/>
+  <!-- Capelli sopra -->
+  <ellipse class="dev-hair" cx="200" cy="145" rx="60" ry="30" fill="#2C1810"/>
+
+  <!-- Orecchie -->
+  <ellipse cx="133" cy="196" rx="10" ry="13" fill="#F0BF9A"/>
+  <ellipse cx="267" cy="196" rx="10" ry="13" fill="#F0BF9A"/>
+
+  <!-- Occhi (bianchi) -->
+  <ellipse cx="175" cy="192" rx="16" ry="14" fill="white"/>
+  <ellipse cx="225" cy="192" rx="16" ry="14" fill="white"/>
+  <!-- Iride -->
+  <circle cx="175" cy="193" r="8" fill="#4A3728"/>
+  <circle cx="225" cy="193" r="8" fill="#4A3728"/>
+  <!-- Pupille -->
+  <circle cx="176" cy="193" r="4" fill="#1A1A1A"/>
+  <circle cx="226" cy="193" r="4" fill="#1A1A1A"/>
+  <!-- Riflesso occhi -->
+  <circle cx="179" cy="190" r="2" fill="white" opacity="0.8"/>
+  <circle cx="229" cy="190" r="2" fill="white" opacity="0.8"/>
+
+  <!-- Occhiali — montatura sinistra -->
+  <circle cx="175" cy="192" r="19" fill="none" stroke="#B5A642" stroke-width="3"/>
+  <!-- Occhiali — montatura destra -->
+  <circle cx="225" cy="192" r="19" fill="none" stroke="#B5A642" stroke-width="3"/>
+  <!-- Ponte occhiali -->
+  <path d="M194 192 Q200 188 206 192" fill="none" stroke="#B5A642" stroke-width="3" stroke-linecap="round"/>
+  <!-- Stanghette occhiali -->
+  <line x1="156" y1="190" x2="142" y2="190" stroke="#B5A642" stroke-width="3" stroke-linecap="round"/>
+  <line x1="244" y1="190" x2="258" y2="190" stroke="#B5A642" stroke-width="3" stroke-linecap="round"/>
+  <!-- Riflesso lenti -->
+  <path d="M163 183 Q167 180 171 183" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M213 183 Q217 180 221 183" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Sopracciglia -->
+  <path d="M161 176 Q175 171 188 176" fill="none" stroke="#2C1810" stroke-width="3" stroke-linecap="round"/>
+  <path d="M212 176 Q225 171 239 176" fill="none" stroke="#2C1810" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Naso -->
+  <path d="M200 200 Q196 212 200 216 Q204 212 200 200" fill="none" stroke="#E0A882" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Sorriso -->
+  <path d="M183 228 Q200 242 217 228" fill="none" stroke="#C0805A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Guance rosa -->
+  <ellipse cx="162" cy="222" rx="14" ry="8" fill="#FFB3B3" opacity="0.35"/>
+  <ellipse cx="238" cy="222" rx="14" ry="8" fill="#FFB3B3" opacity="0.35"/>
+
+  <!-- Braccia -->
+  <ellipse cx="135" cy="300" rx="18" ry="42" fill="#4A4A4A" transform="rotate(-10 135 300)"/>
+  <ellipse cx="265" cy="300" rx="18" ry="42" fill="#4A4A4A" transform="rotate(10 265 300)"/>
+  <!-- Mani -->
+  <ellipse cx="128" cy="338" rx="14" ry="11" fill="#F5CBA7" transform="rotate(-10 128 338)"/>
+  <ellipse cx="272" cy="338" rx="14" ry="11" fill="#F5CBA7" transform="rotate(10 272 338)"/>
+
+  <!-- Laptop — base -->
+  <rect x="110" y="340" width="180" height="12" rx="4" fill="#D4C85A"/>
+  <rect x="115" y="336" width="170" height="10" rx="3" fill="#C2B84E"/>
+  <!-- Laptop — schermo -->
+  <rect x="120" y="270" width="160" height="70" rx="6" fill="#2d3436"/>
+  <!-- Schermo interno -->
+  <rect x="126" y="275" width="148" height="60" rx="4" fill="#1e272e"/>
+  <!-- Linee di codice stilizzate -->
+  <rect x="134" y="283" width="60" height="4" rx="2" fill="#B5A642" opacity="0.9"/>
+  <rect x="134" y="292" width="90" height="4" rx="2" fill="#D4C85A" opacity="0.7"/>
+  <rect x="142" y="301" width="45" height="4" rx="2" fill="#7EC8A0" opacity="0.8"/>
+  <rect x="134" y="310" width="75" height="4" rx="2" fill="#D4C85A" opacity="0.6"/>
+  <rect x="142" y="319" width="55" height="4" rx="2" fill="#B5A642" opacity="0.7"/>
+  <!-- Cursore lampeggiante -->
+  <rect class="dev-cursor" x="198" y="319" width="3" height="10" rx="1" fill="#B5A642"/>
+  <!-- Cerniera laptop -->
+  <rect x="118" y="337" width="164" height="4" rx="2" fill="#B5A642" opacity="0.5"/>
+</svg>
