@@ -39,16 +39,23 @@ export class AuthService {
     if (!this.getToken()) {
       return false;
     }
-    if (this.isTokenExpired()) {
+
+    const payload = this.getTokenPayload();
+    if (!payload) {
       this.logout();
       return false;
     }
+
+    if (this.isTokenExpired(payload)) {
+      this.logout();
+      return false;
+    }
+
     return true;
   }
 
-  private isTokenExpired(): boolean {
-    const payload = this.getTokenPayload();
-    const exp = payload?.['exp'];
+  private isTokenExpired(payload: Record<string, unknown>): boolean {
+    const exp = payload['exp'];
     if (typeof exp !== 'number') {
       return false;
     }

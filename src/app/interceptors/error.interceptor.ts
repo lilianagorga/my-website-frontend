@@ -4,13 +4,17 @@ import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
+const AUTH_ENDPOINTS = ['/auth/login', '/auth/register'];
+
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      if (error.status === 401) {
+      const isAuthRequest = AUTH_ENDPOINTS.some(endpoint => req.url.includes(endpoint));
+
+      if (error.status === 401 && !isAuthRequest) {
         authService.logout();
         router.navigateByUrl('/login');
       } else if (error.status === 403) {
