@@ -2,7 +2,7 @@
   <div class="navbar-container">
     <a class="navbar-brand" routerLink="/">Liliana Gorga</a>
 
-    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()">
+    <button class="menu-toggle" [class.open]="menuOpen()" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>

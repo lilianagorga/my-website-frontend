@@ -78,11 +78,15 @@
 .menu-toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 4px;
+  width: 36px;
+  height: 36px;
 
   .bar {
     width: 24px;
@@ -90,6 +94,21 @@
     background: var(--color-text);
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.open {
+    .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   }
 }
 
