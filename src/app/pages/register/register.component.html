@@ -21,7 +21,7 @@
         @if (registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')) {
           <span class="error">L'email è obbligatoria.</span>
         }
-        @if (registerForm.get('email')?.touched && registerForm.get('email')?.hasError('email')) {
+        @if (registerForm.get('email')?.touched && (registerForm.get('email')?.hasError('email') || registerForm.get('email')?.hasError('pattern'))) {
           <span class="error">Inserisci un'email valida.</span>
         }
       </div>

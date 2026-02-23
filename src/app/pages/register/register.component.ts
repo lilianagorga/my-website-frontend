@@ -28,6 +28,8 @@ interface RegisterForm {
   confirmPassword: FormControl<string>;
 }
 
+const STRICT_EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 const passwordMatchValidator: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
   const password = group.get('password')?.value;
   const confirmPassword = group.get('confirmPassword')?.value;
@@ -54,7 +56,7 @@ export class RegisterComponent {
 
   registerForm: FormGroup<RegisterForm> = this.fb.nonNullable.group({
     username: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email, Validators.pattern(STRICT_EMAIL_PATTERN)]],
     password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
     confirmPassword: ['', Validators.required]
   }, { validators: passwordMatchValidator });

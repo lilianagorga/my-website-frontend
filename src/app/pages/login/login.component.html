@@ -10,7 +10,7 @@
         @if (loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')) {
           <span class="error">L'email è obbligatoria.</span>
         }
-        @if (loginForm.get('email')?.touched && loginForm.get('email')?.hasError('email')) {
+        @if (loginForm.get('email')?.touched && (loginForm.get('email')?.hasError('email') || loginForm.get('email')?.hasError('pattern'))) {
           <span class="error">Inserisci un'email valida.</span>
         }
       </div>
