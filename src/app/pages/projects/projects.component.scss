@@ -193,47 +193,72 @@
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.65rem;
 
   a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.85rem;
+    min-height: 2.25rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
-    position: relative;
-    transition: color var(--transition);
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+    animation: fadeInUp 0.3s ease both;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: currentColor;
-      transition: width var(--transition);
+    svg {
+      transition: transform var(--transition);
     }
 
-    &:hover::after {
-      width: 100%;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    &:hover svg {
+      transform: translateX(1px);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--color-focus-ring), var(--shadow-sm);
+    }
+
+    &:nth-child(1) {
+      animation-delay: 0.04s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.08s;
     }
   }
 
   .link-github {
-    color: var(--color-text-secondary);
+    color: #24292f;
+    background: rgba(36, 41, 47, 0.08);
+    border-color: rgba(36, 41, 47, 0.24);
 
     &:hover {
-      color: var(--color-primary);
+      color: #fff;
+      background: #24292f;
+      border-color: #24292f;
     }
   }
 
   .link-demo {
     color: var(--color-primary);
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light-strong);
 
     &:hover {
-      color: var(--color-primary-hover);
+      color: #fff;
+      background: var(--color-primary);
+      border-color: var(--color-primary);
     }
   }
 }
