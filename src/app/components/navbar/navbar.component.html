@@ -10,7 +10,6 @@
 
     <ul class="nav-links" [class.open]="menuOpen()">
       <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="menuOpen.set(false)">Home</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen.set(false)">Progetti</a></li>
       <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen.set(false)">Contatti</a></li>
       @if (!authService.isLoggedIn()) {
         <li><a routerLink="/login" routerLinkActive="active" (click)="menuOpen.set(false)">Accedi</a></li>
